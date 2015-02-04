@@ -211,28 +211,41 @@ ade da agricultura.
 \lang brazilian
 Uma estrategia são os métodos e metodologias de avaliação, as quais utilizam
  indicadores, um exemplo de este enfoque é a pesquisa 
-\backslash
-cite{AlkanOlsson:2009} onde desenvolveram um 
-\backslash
-textit{framework} de indicadores que relaciona de uma maneira consistente
- as dimensões ambiental, econômica e social do desenvolvimento sustentável,
- seu principal benefício é uma relativa simplicidade na apresentação da
- informação e a possibilidade de vincular os indicadores com objetivos políticos
- de cada dimensão da sustentabilidade e assim facilitar a comparação dos
- impactos das novas políticas em cada dimensão.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "AlkanOlsson:2009"
+
+\end_inset
+
+ onde desenvolveram um 
+\emph on
+framework
+\emph default
+ de indicadores que relaciona de uma maneira consistente as dimensões ambiental,
+ econômica e social do desenvolvimento sustentável, seu principal benefício
+ é uma relativa simplicidade na apresentação da informação e a possibilidade
+ de vincular os indicadores com objetivos políticos de cada dimensão da
+ sustentabilidade e assim facilitar a comparação dos impactos das novas
+ políticas em cada dimensão.
 \end_layout
 
 \begin_layout Standard
 
 \lang brazilian
 Na pesquisa realizada por 
-\backslash
-cite{Wilson2007299} analisam o melhor abordagem para o desenho e uso de
- modelos 
-\backslash
-sigla{SDI}{Sustainable Development Indicator}, esta pesquisa direciona um
- aspecto desta pergunta explorando se as métricas globais SDI estão enviando
- uma mensagem clara para guiar o desenvolvimento sustentável.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Wilson2007299"
+
+\end_inset
+
+ analisam o melhor abordagem para o desenho e uso de modelos 
+\emph on
+SDI Sustainable Development Indicator
+\emph default
+, esta pesquisa direciona um aspecto desta pergunta explorando se as métricas
+ globais SDI estão enviando uma mensagem clara para guiar o desenvolvimento
+ sustentável.
  
 \end_layout
 
@@ -252,61 +265,97 @@ ade das nações, o grau de variabilidade entre as métricas é analisado por
 Existem pesquisas que abordam a sustentabilidade desde ferramentas tecnológicas,
  as quais podem servir de referencia ao sistema SustenAgro, uma delas foi
  desenvolvida por 
-\backslash
-cite{brilhante:2006} e consiste em um 
-\backslash
-textit{framework} (MOeMA-IS) para análise sustentável do estado do Amazonas,
- faz uso de uma ontologia para descrição de Indicadores de sustentabilidade
- (ISD-Economics Ontology), onde são utilizados indicadores humano (Social),
- suporte (Econômico) e natural (Ambiental), os quais foram subdivididos
- em sete indicadores, seu desenvolvimento foi feito de uma maneira genérica
- de forma que ela suporta a inclusão de novos indicadores de forma simples,
- esta ontologia foi feita em dois níveis de hierarquia.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "brilhante:2006"
+
+\end_inset
+
+ e consiste em um 
+\emph on
+framework
+\emph default
+ (MOeMA-IS) para análise sustentável do estado do Amazonas, faz uso de uma
+ ontologia para descrição de Indicadores de sustentabilidade (ISD-Economics
+ Ontology), onde são utilizados indicadores humano (Social), suporte (Econômico)
+ e natural (Ambiental), os quais foram subdivididos em sete indicadores,
+ seu desenvolvimento foi feito de uma maneira genérica de forma que ela
+ suporta a inclusão de novos indicadores de forma simples, esta ontologia
+ foi feita em dois níveis de hierarquia.
  As medidas de sustentabilidade estão explicitas na ontologia.
  O 
-\backslash
-textit{framework} trabalha de forma onde a base dele é a ontologia e ele
- pega os indicadores de bases de dados (não descrito se são 
-\backslash
-textit{triplestores}) e as medidas e valores padrões de outra base e assim
- o 
-\backslash
-textit{framework} calcula as medidas dos indicadores e dá um resultado relevante
- ao tipo de necessidade.
+\emph on
+framework
+\emph default
+ trabalha de forma onde a base dele é a ontologia e ele toma os indicadores
+ de bases de dados (não descrito se são 
+\emph on
+triplestores
+\emph default
+) e as medidas e valores padrões de outra base e assim o 
+\emph on
+framework
+\emph default
+ calcula as medidas dos indicadores e dá um resultado relevante ao tipo
+ de necessidade.
  Para o desenvolvimento da ontologia foi utilizada a ferramenta 
-\backslash
-textit{Protégé} utilizando o plugin de OWL e alguns indicadores foram feitos
- utilizando a classe do SUMO do OWL.
+\emph on
+Protégé
+\emph default
+ utilizando o plugin de OWL e alguns indicadores foram feitos utilizando
+ a classe do SUMO do OWL.
 \end_layout
 
 \begin_layout Standard
 
 \lang brazilian
 Outra ferramenta foi desenvolvida por 
-\backslash
-cite{kraines2011system} com a visão de criar um 
-\backslash
-textit{Knowledge Sharing System for Sustainability Science} por meio do
- processo 
-\backslash
-textit{Semantic Data Modeling}, uma ontologia fundamentada na lógica descritiva
- foi desenvolvida por meio do ISO 15926 Data Model para descrever três tipos
- de conceptualizações de ciência sustentável: 
-\backslash
-textit{situational knowledge}, 
-\backslash
-textit{analytic methods} e 
-\backslash
-textit{scenario frameworks}.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kraines2011system"
+
+\end_inset
+
+ com a visão de criar um 
+\emph on
+Knowledge Sharing System for Sustainability Science
+\emph default
+ por meio do processo 
+\emph on
+Semantic Data Modeling
+\emph default
+, uma ontologia fundamentada na lógica descritiva foi desenvolvida por meio
+ do ISO 15926 Data Model para descrever três tipos de conceptualizações
+ de ciência sustentável: 
+\emph on
+situational knowledge
+\emph default
+, 
+\emph on
+analytic methods
+\emph default
+ e 
+\emph on
+scenario frameworks
+\emph default
+.
  Os conhecimentos dos especialistas podem ser descritos por meio de 
-\backslash
-textit{semantic statements} utilizando esta ontologia o 
-\backslash
-textit{semantic matching based on logic} e 
-\backslash
-textit{rule-based inferences} foram usados para quantificar o 
-\backslash
-textit{conceptual overlap of semantic statements}.
+\emph on
+semantic statements
+\emph default
+ utilizando esta ontologia o 
+\emph on
+semantic matching based on logic
+\emph default
+ e 
+\emph on
+rule-based inferences
+\emph default
+ foram usados para quantificar o 
+\emph on
+conceptual overlap of semantic statements
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -314,29 +363,38 @@ textit{conceptual overlap of semantic statements}.
 \lang brazilian
 Alem disso na literatura existem pesquisas relacionadas com o vocabulário
  
-\backslash
-sigla{AGROVOC}{Agricultural Vocabulary} 
+\emph on
+AGROVOC Agricultural Vocabulary
+\emph default
+ 
 \backslash
 footnote{http://aims.fao.org/agrovoc} que é um 
-\backslash
-textit{theasaurus} que fornece termos padronizados sobre alimentação, nutrição,
- agricultura, pesca, floresta e meio ambiente criados de maneira colaborativa
- e coordenados pela 
-\backslash
-sigla{FAO}{Food and Agriculture Organization}, estes termos podem ser reutilizad
-os nas ontologias 
-\backslash
-cite{DCMIPro841}, permitindo uma padronização com os identificadores dos
- conceitos, reusando informações e integrando os conceitos com outros dados
- da 
-\backslash
-sigla{LOD}{Linked Open Data}, esta reutilização foi feita através da vinculação
- de AGROVOC ao sistema 
-\backslash
-sigla{AOS/CS}{Agricultural Ontology Service Concept Server}, a FAO desenvolveu
- um modelo base para esse novo sistema utilizando o 
-\backslash
-sigla{OWL}{Web Ontology Language}
+\emph on
+theasaurus
+\emph default
+ que fornece termos padronizados sobre alimentação, nutrição, agricultura,
+ pesca, floresta e meio ambiente criados de maneira colaborativa e coordenados
+ pela 
+\emph on
+FAO Food and Agriculture Organization
+\emph default
+, estes termos podem ser reutilizados nas ontologias 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "DCMIPro841"
+
+\end_inset
+
+, permitindo uma padronização com os identificadores dos conceitos, reusando
+ informações e integrando os conceitos com outros dados da LOD Linked Open
+ Data, esta reutilização foi feita através da vinculação de AGROVOC ao sistema
+ 
+\emph on
+AOS/CS Agricultural Ontology Service Concept Server
+\emph default
+, a FAO desenvolveu um modelo base para esse novo sistema utilizando o 
+\emph on
+OWL Web Ontology Language.
 \end_layout
 
 \begin_layout Standard
@@ -345,37 +403,49 @@ sigla{OWL}{Web Ontology Language}
 Cada uma destas pesquisas fornece um exemplo do uso das tecnologias da internet
  e da web semântica na criação de soluções baseadas em conhecimento, isto
  é confirmado pelo artigo 
-\backslash
-cite{roussey2010ontologies} onde descrevem como as ontologias têm sido usadas
- para múltiplas tarefas, uma das quais é conseguir interoperabilidade entre
- sistemas de informação heterogêneos e como as seguintes gerações de sistemas
- de informação utilizariam uma base do conhecimento do domínio, dadas as
- afirmações destas pesquisas pode-se deduzir que uma ontologia proporciona
- o suporte conceitual para cumprir os requisitos do sistema SustenAgro.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "roussey2010ontologies"
+
+\end_inset
+
+ onde descrevem como as ontologias têm sido usadas para múltiplas tarefas,
+ uma das quais é conseguir interoperabilidade entre sistemas de informação
+ heterogêneos e como as seguintes gerações de sistemas de informação utilizariam
+ uma base do conhecimento do domínio, dadas as afirmações destas pesquisas
+ pode-se deduzir que uma ontologia proporciona o suporte conceitual para
+ cumprir os requisitos do sistema SustenAgro.
 \end_layout
 
 \begin_layout Standard
 
 \lang brazilian
 A pesquisa feita por 
-\backslash
-cite{boseley2009development}, da um exemplo de como unificar termos de plantas
- e organizá-los em uma maneira sistemática é fundamental para mais eficiência
- nas pesquisas e descobertas, para este fim, a 
-\backslash
-textit{Plant Ontology} foi criada como uma iniciativa do 
-\backslash
-textit{Plant Ontology Consortium}, esta ontologia é um vocabulário controlado
- de termos usados para dados de atributos (por exemplo, genótipo e fenótipo)
- para uma estrutura especifica da planta ou um estagio de desenvolvimento.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "boseley2009development"
+
+\end_inset
+
+, da um exemplo de como unificar termos de plantas e organizá-los em uma
+ maneira sistemática é fundamental para mais eficiência nas pesquisas e
+ descobertas, para este fim, a 
+\emph on
+Plant Ontology
+\emph default
+ foi criada como uma iniciativa do 
+\emph on
+Plant Ontology Consortium
+\emph default
+, esta ontologia é um vocabulário controlado de termos usados para dados
+ de atributos (por exemplo, genótipo e fenótipo) para uma estrutura especifica
+ da planta ou um estagio de desenvolvimento.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section
 
 \lang brazilian
-
-\backslash
-section {Considerações finais}
+Considerações finais
 \end_layout
 
 \begin_layout Standard

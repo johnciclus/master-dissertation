@@ -93,6 +93,10 @@ key "simon:1991"
  e demanda dos produtos do sistema de produção agrícola, o conjunto destes
  fenômenos conforma um sistema complexo que requere uma abordagem holística
  e estratégica para garantir a sustentabilidade do sistema.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -114,6 +118,10 @@ key "AlkanOlsson:2009"
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -127,6 +135,10 @@ Com a finalidade de fornecer uma ferramenta de avaliação da sustentabilidade
  como sistemas especialistas que contém o conhecimento de um domínio particular,
  sobre o qual é possível fazer inferências e assim realizar recomendações
  que apoiem a tomada de decisões.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -149,6 +161,10 @@ nto, conseguindo assim uma representação entendível pelos humanos e computado
 , além de fornecer suporte com outras tecnologias da web semântica e assim
  realizar consultas complexas que permitem responder perguntas de interesse
  para os usuários do sistema.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -160,6 +176,10 @@ A ontologia do conhecimento do domínio vai-se integrar com outra ontologia
  administradores, concedendo flexibilidade ao sistema para incluir cada
  um dos indicadores, métodos e recomendações que vão-se construindo por
  parte dos especialistas do domínio.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -169,6 +189,10 @@ Nesta pesquisa vão-se desenvolver as tecnologias: ontologia de avaliação
  da sustentabilidade, ontologia de interface gráfica, DSL para definição
  de interfaces de usuário, sistema gerador de interfaces e implementação
  do método de avaliação de sustentabilidade.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -182,6 +206,10 @@ Empresa Brasileira de Pesquisa Agropecuária
 \emph default
  com a finalidade de definir politicas públicas no setor produtivo da cultura
  de cana-de-açúcar.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -205,6 +233,10 @@ O processo de avaliação da sustentabilidade da cultura de cana-de-açúcar
  tanto do software como da representação do conhecimento do domínio, por
  isso o primeiro produto tecnologico da presente pesquisa vai Ser a ontologia
  SustenAgro.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -216,6 +248,10 @@ o por meio de entidades, relações semânticas e axiomas.
  uma representação formal dos conceitos do domínio, os quais vão ser integrados
  em cada uma das funcionalidades do sistema permitindo uma personalização
  e vinculação da informação para suplir os requisitos do usuário.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -228,6 +264,10 @@ Domain Specific Language
  que permitirá definir por parte dos usuários administradores os elementos
  e o aspecto da interface gráfica do usuário, para assim fornecer flexibilidade
  na definição da interface grafica.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -236,6 +276,10 @@ Domain Specific Language
 Finalmente outra característica que será implementada no sistema SustenAgro
  é a recuperação da informação com conteúdo semântico, permitindo que o
  sistema de respostas a consultas complexas que integram semântica.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -257,9 +301,13 @@ Desenvolver um sistema web baseado em conhecimento do especialista que permita
  realizar a avaliação da sustentabilidade no sistema produtivo de cana-de-açúcar
  no estado de São Paulo e que flexibilize os conceitos e a interface gráfica
  por parte dos usuários administradores.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 
 \lang brazilian
 Objetivos específicos

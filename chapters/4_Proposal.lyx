@@ -68,8 +68,1146 @@
 
 \begin_body
 
+\begin_layout Section
+
+\lang brazilian
+Descrição
+\end_layout
+
 \begin_layout Standard
 
+\lang brazilian
+O sistema web SustenAgro vai ser composto por vários desenvolvimentos tecnológic
+os, uma abordagem da arquitetura do sistema é apresentada na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Architecture"
+
+\end_inset
+
+, a qual contém os seguintes elementos:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Graphics
+	filename /media/john/Datos/Master Degree Thesis/Qualification Document/figures/arquitecture.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang brazilian
+Arquitetura de SustenAgro
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Architecture"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\lang brazilian
+Ontologia do domínio: Ontologia que vai representar os conceitos do domínio:
+ avaliação da sustentabilidade do sistema produtivo de cana-de-açúcar no
+ estado de São Paulo, é a base fundamental para o sistema SustenAgro porque
+ permite estabelecer os conceitos fundamentais que vão ser utilizados pelo
+ sistema, entre eles: indicadores, componentes de indicadores, índices,
+ dimensões da sustentabilidade, recomendações e o método de avaliação.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang brazilian
+TripleStore: Sistema de recuperação da informação que permitirá padronizar
+ as informações em formato de triplas, permitindo a compatibilidade e o
+ reuso das informações entre fontes de dados estrangeiras, construindo desda
+ maneira o objetivo do 
+\emph on
+LOD Linked Open Data
+\emph default
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang brazilian
+Ontologia de interface gráfica: Ontologia que representará os controles
+ de usuários, com a finalidade de permitir a manipulação deles por meio
+ de uma linguagem de alto nível que represente cada um dos tipos de controles
+ e suas funcionalidades para fazer um mapeamento entre os tipos de dados
+ que vão ser interagidos entre o sistema e os usuários.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang brazilian
+DSL de interfaces: Linguagem especifica do domínio dos controles web que
+ vão ser fornecidos por SustenAgro e que permitirá uma definição flexível
+ de interfaces, baseadas nos conceitos definidos na ontologia de sustentabilidad
+e em agricultura, permitindo desta maneira a definição das características
+ visuais e dos tipos de controles especializados para cada conceito da ontologia
+ do domínio.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang brazilian
+Sistema gerador de interfaces gráficas: Sistema no cliente que faz um mapeamento
+ entre a interação do usuário administrador com a linguagem DSL para facilitar
+ a definição da interface gráfica de SustenAgro.
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+Ontologia do domínio
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Para definir a ontologia realizou-se uma pesquisa das fontes de dados relacionad
+as com ontologias do domínio de avaliação da sustentabilidade em sistemas
+ agrícolas, concluindo-se que não existem ontologias que suportem este domínio,
+ pelo qual propõe-se desenvolver uma ontologia que utilize os conceitos
+ de avaliação de sustentabilidade e de sistemas agrícolas, e que faça uso
+ das tecnologias relacionadas como "Agricultural Ontology Service" e AGROVOC
+ que é um dos principais vocabulários agrícolas desenvolvido pela FAO, esta
+ ontologia terá a finalidade de fornecer uma base conceitual e tecnológica
+ para suportar o processo de avaliação da sustentabilidade no sistema produtivo
+ de cana-de-açúcar no estado de São Paulo.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O desenvolvimento da ontologia ocorrerá de forma ágil por meio de técnicas
+ de prototipação rápida que serão de âmbito e complexidade crescente, abrangendo
+ grupos de conceitos relacionados entre si, com a finalidade de modularizar
+ o desenvolvimento dela.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O desenvolvimento da ontologia depende essencialmente da comunicação entre
+ os especialistas e os modeladores, pelo qual definiram-se meios de comunicação
+ e representação do conhecimento, os meios de comunicação são as reuniões
+ presenciais e virtuais, e o meio de representação são modelos conceituais
+ que permitem uma visualização direta do domínio.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Inicialmente o modelo conceitual vai ser representado por meio de um mapa
+ conceitual que permitirá a comunicação em um formato reconhecido por cada
+ um dos profissionais envolvidos no projeto, os modeladores em tecnologias
+ da web semântica representarão esse modelo no padrão OWL e definirão instâncias
+ para cada uma das classes, depois disso o especialista do domínio construirá
+ uma pergunta e o sistema deve gerar os resultados esperados, logo segue
+ uma fase de validação e ajustes, que deve-se finalizar com um protótipo
+ confiável que represente cada um dos setores da ontologia, repetindo o
+ processo até ter todos os elementos de interesse e a integridade requerida.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Uma das contribuições da ontologia é que ao conceder significado semântico
+ aos sistemas especialistas, eles poderão fazer uma representação semântica
+ do conhecimento de domínio tanto para os usuários como para os computadores,
+ conseguindo desta maneira uma comunicação e o uso do sistema de mais alto
+ nível em comparação com os sistemas especialistas que não tem suporte semântico
+, fornecendo serviços especializados como as consultas complexas com semântica,
+ a 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sketch"
+
+\end_inset
+
+ é um primeiro esboço dos elementos que serão contidos na ontologia.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /media/john/Datos/Master Degree Thesis/Qualification Document/figures/esboco.jpg
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang brazilian
+Primeiro esboço do mapa conceitual
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sketch"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Nesta primeira aproximação é identificado o conceito fundamental da ontologia,
+ os 
+\backslash
+aspas{indicadores}, que representam e quantificam os aspectos críticos do
+ sistema produtivo de cana-de-açúcar, mediante o uso dos 
+\begin_inset Quotes eld
+\end_inset
+
+limiares
+\begin_inset Quotes erd
+\end_inset
+
+ que estabelecem o intervalo dos indicadores, que são instanciados com os
+ valores 
+\begin_inset Quotes eld
+\end_inset
+
+Mais sustentável
+\begin_inset Quotes erd
+\end_inset
+
+ ou 
+\begin_inset Quotes eld
+\end_inset
+
+Menos sustentável
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Outro conceito fundamental é 
+\begin_inset Quotes eld
+\end_inset
+
+avaliação
+\begin_inset Quotes erd
+\end_inset
+
+ que é composta de um conjunto de 
+\begin_inset Quotes eld
+\end_inset
+
+indicadores
+\begin_inset Quotes erd
+\end_inset
+
+ e de um 
+\begin_inset Quotes eld
+\end_inset
+
+método
+\begin_inset Quotes erd
+\end_inset
+
+ o qual é aplicado sobre uma 
+\begin_inset Quotes eld
+\end_inset
+
+fazenda
+\begin_inset Quotes erd
+\end_inset
+
+ ou 
+\begin_inset Quotes eld
+\end_inset
+
+usina
+\begin_inset Quotes erd
+\end_inset
+
+, a avaliação gerá 
+\begin_inset Quotes eld
+\end_inset
+
+índices
+\begin_inset Quotes erd
+\end_inset
+
+ que são apresentados junto às 
+\begin_inset Quotes eld
+\end_inset
+
+recomendações
+\begin_inset Quotes erd
+\end_inset
+
+ como resultado do processo de avaliação.
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+TripleStore
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O sistema SustenAgro será baseado nas tecnologias da web semântica, entre
+ as tecnologias existentes encontra-se a Triplestore que é um banco de dados
+ para o armazenamento e recuperação de triplas
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rusher2003triple"
+
+\end_inset
+
+, para o presente projeto foi selecionada a Triplestore Parliament 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang brazilian
+http://parliament.semwebcentral.org/
+\end_layout
+
+\end_inset
+
+ porque fornece as características "Native SPARQL support", "Native SPARQL/Updat
+e support" e "Native SPARQL Protocol Endpoint" o qual padroniza o armazenamento
+ e recuperação da informação, e a compatibilidade com os sistemas web por
+ meio do Endpoint.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Ontologia de interface gráfica
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Será desenvolvida uma ontologia de interface gráfica focada na definição
+ e modificação de controles de usuário, para que os usuários administradores
+ possam definir os elementos visuais para cada conceito do domínio de sustentabi
+lidade.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Um exemplo do uso desta ontologia é nos indicadores os quais armazenaram
+ um valor inserido pelo usuário, que pode ser de diversos tipos como numérico
+ continuo, numérico discreto, percentagem, booleano, lista de términos ou
+ alfanumérico, dada esta diversidade é importante representar cada uma das
+ características especificas dos conceitos e das tecnologias dos controles
+ de usuário para fazer um mapeamento que suporte o desenho personalizado
+ da interface gráfica.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+DSL de interfaces
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A linguagem especifica do domínio permitirá que os usuários administradores
+ definam a interface gráfica em uma linguagem de alto nível, está DSL está
+ baseada nas duas ontologias base e permitira definir e administrar os seguintes
+ elementos conceituais:
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Indicadores 
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Componentes dos indicadores
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Limiares
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Métodos
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Avaliações
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Índices
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Cada um dos elementos da DSL terão uma interface gráfica predefinida tipo
+ contenedor e por meio da DSL poderão-se parametrizar as caracteristicas
+ propias dos controles de usuário segundo o criterio dos administradores,
+ cada uma das ações dos administradores serão mapeados na ontologia para
+ permitir a modificação dela, fornecendo a funcionalidade de definição e
+ modificação dos controles.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Sistema gerador de interfaces gráficas
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O sistema gerador de interfaces é uma camada adicional ao processo de definição
+ da interface gráfica a qual manipula a DSL que está suportada pelas ontologias,
+ na 
+\backslash
+fref{fig:interfaces} é apresentada a arquitetura onde o sistema gerador
+ de interfaces fornece umas funcionalidades visuais de definição da interface
+ que esta suportada pela DSL, isto com a finalidade de conceder usabilidade
+ e flexibilidade ao sistema.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[htb] 
+\backslash
+caption{Processo de geração de interfaces graficas} 
+\backslash
+label{fig:interfaces} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.5]{images/interfaces.png} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+section{Metodologia}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A arquitetura de SustenAgro pode ser dividida em dois áreas principais:
+ a representação ontológica e o sistema web que irá coordenar o processo
+ de avaliação da sustentabilidade em sistemas agrícolas.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O conhecimento envolvido em Sustenagro está em contínua construção, no qual
+ é preciso um enfoque de desenvolvimento ágil tanto no software como nos
+ conceitos do domínio para permitir mudanças no sistema sem afetar a funcionalid
+ade do mesmo, por isso foi selecionada a tecnologia de OWL que permite a
+ continua definição tanto da estrutura da informação como das instâncias.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na 
+\backslash
+fref{fig:fluxograma} é apresentada a proposta metodológica que guiará o
+ desenvolvimento da ontologia de avaliação da sustentabilidade no sistema
+ produtivo de cana-de-açúcar e a ontologia ontologia de representação de
+ controles de usário, más pode mudar porque é uma metodologia cíclica:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[htb] 
+\backslash
+caption{Metodologia de definição das ontologias} 
+\backslash
+label{fig:fluxograma} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.5]{images/fluxograma.png} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Depois de definir as ontologias, se desenhará a DSL para suportar as principais
+ funcionalidades por parte do usuário administrador, as quais consistem
+ em definir os controles de usuário da interface gráfica segundo o tipo
+ de dado que requeira cada indicador, desta forma será possível adaptar
+ a interface à natureza dos dados do domínio.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A partir da DSL pode-se suportar um sistema gerador de interfaces gráficas
+ para facilitar a usabilidade e flexibilidade do sistema, esta ultima caracterís
+tica constitui uma nova proposta de desenvolvimento de sistemas especialistas
+ que permitam uma adaptação às mudanças dos conceitos do dominio.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O desenvolvimento do sistema web será realizado por meio de metodologias
+ ágeis de desenvolvimento de software, principalmente vão ser utilizadas
+ praticas da metodologia SCRUM 
+\backslash
+cite{schwaber2002gile}.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+section{Resultados esperados}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item A ontologia de SustenAgro que será a base conceitual e tecnológica
+ de todo o sistema e integrará o conhecimento da sustentabilidade e do sistema
+ produtivo de cana-de-açúcar.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item DSL de SustenAgro que flexibilizará a definição da interface de usuário
+ por parte dos administradores do sistema.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item Sistema especialista integrado com as tecnologias da Web Semantica,
+ para permitir a realização de consultas complexas que requerem conhecimento
+ semântico e que isto facilita o processo de análises da informação por
+ parte dos usuários.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item Arquitetura para sistemas de avaliação baseados em conhecimento de
+ domínios específicos.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+end{itemize} 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+section{Desenvolvimento}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+subsection{Ontologia de SustenAgro}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O desenvolvimento da ontologia iniciou com a criação de um mapa conceitual
+ com um grupo de especialistas em modelagem de conhecimento, na reunião
+ da equipe foram identificados os principais conceitos em cada uma das dimensões
+ da sustentabilidade, as quais são dimensão ambiental, social e econômica.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Cada uma das dimensões fazem a função de 
+\backslash
+textit{containers}, em elas estão contidos os indicadores que foram validados
+ como os mais relevantes para as condições gerais das fazendas e usinas
+ produtoras de cana-de-açúcar no estado de São Paulo, os indicadores têm
+ uma relação de 
+\backslash
+textit{contains} com os atributos e uma relação de 
+\backslash
+textit{considers} com os componentes dos indicadores.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+As trés dimensões da sustentabilidade têm uma participação equitativa no
+ método de avaliação 
+\backslash
+cite{kraines2011system}.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na 
+\backslash
+fref{fig:ambiental} representa a dimensão ambiental, modelo onde são definidos
+ os seguintes conceitos:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[htb] 
+\backslash
+caption{Mapa conceitual - Ambiental} 
+\backslash
+label{fig:ambiental} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.75]{images/ambiental.png} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{itemize} 
+\backslash
+item Atributo solo: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos do solo
+ em um sistema de produção agrícola.
+ 
+\backslash
+item Atributo hídrico: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos das fontes
+ hidricas em um sistema de produção agrícola.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item Atributo clima: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos do clima
+ em um sistema de produção agrícola.
+ 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Neste setor da ontologia não foi possível identificar indicadores de tipo
+ hídrico porque não existe consenso entre os especialistas consultados sobre
+ quais são os aspectos mais relevantes para a avaliação da sustentabilidade,
+ mas é um aspecto fundamental para trabalhar nas proximas pesquisas.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na 
+\backslash
+fref{fig:social} representa a dimensão social, modelo onde são defidos os
+ seguintes conceitos:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[htb] 
+\backslash
+caption{Mapa conceitual - Social} 
+\backslash
+label{fig:social} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.75]{images/social.png} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{itemize} 
+\backslash
+item Atributo emprego e renda: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos do emprego
+ e a renda das pessoas envolvidas em um sistema de produção agrícola.
+ 
+\backslash
+item Atributo saúde: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos da saúde
+ das pessoas envolvidas em um sistema de produção agrícola.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item Atributo treinamento: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos do treinament
+o das pessoas envolvidas em um sistema de produção agrícola.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Neste setor da ontologia é importante reconhecer que as unidades produtivas,
+ já sejam tipo fazendas ou usinas estão compostas por pessoas tanto internamente
+ como externamente, pelo qual é importante refinar os indicadores para incluir
+ a população externa à unidade produtiva que é afetada pelas praticas produtivas.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na 
+\backslash
+fref{fig:economica} representa-se a dimensão econômica onde foram definidos
+ os seguintes conceitos:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[htb] 
+\backslash
+caption{Mapa conceitual - Econômica} 
+\backslash
+label{fig:economica} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.55]{images/economica.png} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{itemize} 
+\backslash
+item Atributo industrial: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos da industria
+ envolvidas em um sistema de produção agrícola.
+ 
+\backslash
+item Atributo área recuperada: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos da área
+ produtiva e as técnicas produtivas em um sistema de produção agrícola.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+item Atributo produtividade: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos dos produtos
+ e os processos produtivos em um sistema de produção agrícola.
+ 
+\backslash
+item Atributo custo: é um 
+\backslash
+textit{container} dos indicadores que avaliam os aspectos críticos do custo
+ das producões em um sistema de produção agrícola.
+ 
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Cada uma das tres dimensões devem avaliarse equitativamente para gerar um
+ resultado coerente com a teoria da sustentabilidade.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na 
+\backslash
+fref{fig:metodo} representa-se os conceitos que fazem a união das dimensões
+ e representam conceitos do metodo de avaliação:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[htb] 
+\backslash
+caption{Mapa conceitual - Método} 
+\backslash
+label{fig:metodo} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.6]{images/metodo.png} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Cada um dos conceitos relacionados com o método de avaliação são os que
+ utilizam os indicadores para realizar o processo de avaliação, a intenção
+ é representar o mais detalhado e claro possível o processo de avaliação
+ para a correta execução dele.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+subsection{Protótipo da interface grafica de SustenAgro}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O primeiro protótipo grafico está publicado nos servidores do laboratório
+ Intermídia do ICMC USP 
+\backslash
+footnote{http://biomac.icmc.usp.br:8080/sustenagro/}, na 
+\backslash
+fref{fig:home} é apresentada a página inicial do protótipo
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[h] 
+\backslash
+caption{Protótipo de SustenAgro - Home} 
+\backslash
+label{fig:home} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.4]{images/home.jpg} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Nesta tela pode-se observar o texto explicativo da ferramenta e as abas
+ de 
+\backslash
+aspas{inicio}, 
+\backslash
+aspas{ferramenta} e 
+\backslash
+aspas{contato}, o menu de ferramenta permite iniciar o processo de avaliação
+ da sustentabilidade.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na 
+\backslash
+fref{fig:indicators} é apresentada a página dos indicadores do protótipo,
+ onde se descreve o processo de avaliação que começa com uma descrição base
+ do processo, a localização geográfica da unidade produtiva, a caracterização
+ dela, os indicadores e as recomendações que o sistema vai gerar.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+begin{figure}[h] 
+\backslash
+caption{Protótipo de SustenAgro - Indicadores} 
+\backslash
+label{fig:indicators} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[scale=0.4]{images/indicators.jpg} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+section{Cronograma de atividades}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A seguir, são descritas as principais atividades previstas a serem realizadas
+ para o desenvolvimento deste trabalho, visando cumprir os objetivos e tendo
+ como referência a metodologia proposta.
+ A duração de cada uma das atividades está descrita no cronograma apresentado
+ no 
+\backslash
+qref{qua:cronograma-atividades}.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+% detalhar o cronograma 
+\backslash
+input{tex/cronograma}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+section {Considerações finais}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O desenvolvimento de Sustenagro satisfaz uma necessidade presente na unidade
+ da Embrapa Meio Ambiente: um sistema de avaliação da sustentabilidade em
+ sistemas produtivos de cana-de-açúcar, este sistema permitira adquirir
+ dados do estado atual da sustentabilidade nas fazendas e usinas e assim
+ formular politicas publicas para promover praticas produtivas responsáveis
+ com o meio ambiente, a sociedade e a economia existente na produção de
+ cana-de-açúcar.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Além de satisfazer uma necessidade institucional, SustenAgro se consolida
+ como uma proposta de sistema especialista baseado em conhecimento e vinculado
+ com as técnicas da web semântica, processo que requere um trabalho de pesquisa
+ e de innovação tecnologica, a pesquisa estará fundamentada na construção
+ deste tipo de sistemas mantendo a usabilidade e flexibilidade os aspectos
+ mais relevantes desde a engeharia do software.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Após do desenvolvimento de SustenAgro pode-se analisar as caracteristicas
+ fundamentais deste tipo de sistema para propor uma arquitectura que permita
+ a geração de sistemas de avaliação em outros dominios do conhecimento.
+ 
 \end_layout
 
 \end_body

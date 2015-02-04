@@ -386,28 +386,20 @@ Proposta de trabalho
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Proposal"
+
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/4_Proposal.lyx"
 
-\begin_layout Chapter
-Ferramentas
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Experimentos
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -416,6 +408,23 @@ Experimentos
 
 \begin_layout Chapter
 Plano de Trabalho
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Work_Plan"
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/5_work plan.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
