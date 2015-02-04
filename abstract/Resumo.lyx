@@ -1,0 +1,115 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Abstract
+O Brasil é considerado o país da megadiversidade por abrigar diversas espécies
+ de flora e fauna.
+ Preservar essa diversidade é extremamente importante, pois a manutenção
+ da vida no planeta depende dos ecossistemas que compõem essa biodiversidade.
+ Por isso, numerosos esforços para realizar essa preservação vêm sendo realizado
+s.
+ Atualmente, vários estudos sobre formas de uso, recuperação e acesso a
+ informações sobre biodiversidade vem sendo discutidos amplamente dentro
+ das agendas acadêmicas de pesquisa, pois pesquisadores e especialistas
+ da área precisam ter acesso a esse conhecimento para conseguirem compartilhar
+ suas novas descobertas sobre seres vivos.
+ Porém, essa tarefa se torna difícil, devido ao grande volume de informação
+ gerado e armazenado atualmente, a falta de interoperabilidade entre as
+ informações de diferentes fontes e formatos e a dificuldade de manipular
+ imagens e informações geográficas.
+ Com o intuito de amenizar alguns desses problemas, este trabalho tem como
+ objetivo construir um Dicionário Geográfico (
+\shape italic
+Gazetteer
+\shape default
+) Colaborativo, usando tecnologias da Web Semântica, para auxiliar a Recuperação
+ de Informações Geográficas sobre Biodiversidade.
+ Para construir esse Gazetteer, este trabalho se baseará em técnicas de
+ recuperação de informação geográfica, para lidar com os dados que contenham
+ algum tipo de significado espacial, e da Web Semântica, para incorporar
+ significado a esses dados.
+ A proposta deste projeto é de que a utilização desse 
+\shape italic
+Gazetteer
+\shape default
+ possíbilitará ao usuário, realizar buscas semânticas para conseguir melhores
+ resultados no que diz respeito à precisão e cobertura de dados, além de
+ permitir a atualização e inserção de informações referente a locais de
+ coleta de espécimes no formato de 
+\shape italic
+Linked Data
+\shape default
+.
+\end_layout
+
+\end_body
+\end_document

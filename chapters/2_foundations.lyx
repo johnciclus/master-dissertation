@@ -1,0 +1,734 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+
+\lang brazilian
+Avaliação da sustentabilidade
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+Sustentabilidade
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Não existe um consenso sobre a definição de sustentabilidade, mas uma definição
+ guia para o nosso projeto é a seguinte:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+\begin_inset Quotes eld
+\end_inset
+
+O desenvolvimento sustentável prevê o atendimento das necessidades do presente
+ sem comprometer a habilidade das gerações futuras de suprir suas próprias
+ necessidades, Brundtland Commission
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Burton:1987"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Após o relatório Brundtland a ênfase do conceito desloca-se da integridade
+ ambiental para o elemento humano, gerando um equilíbrio entre as dimensões
+ econômica, social e ambiental 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "van2005indicadores"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+Critérios de sustentabilidade
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+São as variáveis transversais quantitativas e qualitativas, que estabelecerão
+ os preceitos de orientação para que os indicadores sejam representativos
+ para a sustentabilidade.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os indicadores deverão atender pelo menos um dos critérios de sustentabilidade
+ para ser considerado um bom indicador de sustentabilidade, os critérios
+ de sustentabilidade escolhidos são:
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Produtividade: Relacionado a eficiência e custos.
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Estabilidade: Capacidade do ecossistema de absorver perturbações e permanecer
+ inalterado ( CEPAL/PNUMA, 1994) (Apud Moura, 2002)
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Equidade: Medida de como os produtos do agroecossistema são distribuídos
+ entre os produtores e consumidores locais (Dias Junior, 2000) (Apud Moura,
+ 2002)
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Resiliência: Capacidade do ecossistema flutuar dentro de certos limites
+ e voltar ao seu estado original depois de uma perturbação (CEPAL/PNUMA,
+ 1994) (Apud Moura, 2002)
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Autonomia: Grau de integração do agroecossistema no fluxo de materiais,
+ energia e informação entre as partes constituintes e entre o agroecossistema
+ e o ambiente externo (Fernández, 1995) (Apud Moura, 2002)
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+Atributos norteadores
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os atributos norteadores são variáveis que serão mais representativas dos
+ sistemas de produção agrícola em termos dos compartimentos ambiental e
+ socioeconômico formulados para alcance da sustentabilidade.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os atributos norteadores serão formulados para garantir que as diretrizes
+ para o levantamento e validação dos indicadores reflitam os sistemas de
+ produção agrícola.
+ Uma proposta dos atributos norteadores é a seguinte:
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Dimensão Ambiental: Solo, Hídrico e Clima.
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Dimensão Social: Saúde, Capacitação, Emprego e Renda
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Dimensão Econômica: Industrial, Agrícola, Produtividade e Custo
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+Indicadores de sustentabilidade
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os indicadores são instrumentos usados para avaliar uma determinada realidade,
+ o uso de indicadores permite medir e monitorar aspectos da realidade, seu
+ principal objetivo é agregar, quantificar e simplificar informações sobre
+ fenômenos complexos de modo que as tendências fiquem mais significativas
+ e aparentes, a fim de melhorar o processo de entendimento e comunicação
+ (Bossel, 1999; Bellen, 2005).
+ De acordo com Gallopin (1996) os melhores indicadores são aqueles que simplific
+am as informações relevantes, tornando os fenômenos mais claros.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Três Requisitos Gerais para escolha de um bom indicador, segundo OECD (1993):
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Relevância política e utilidade para usuários
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Solidez analítica
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Mensurabilidade
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Além disso, devem apresentar também: 
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Simplicidade de mensuração
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Repetibilidade ao longo do tempo
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Sensibilidade para detectar mudanças no sistema
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Permitir o cruzamento com outros indicadores
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os indicadores devem ser capazes, não apenas de sinalizar a existência de
+ uma degradação no sistema, mas também de advertir sobre eventuais perturbações
+ potenciais, por isso foi definido o conceito de nível crítico de um indicador:
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+O limite inferior do nível crítico é aquele no qual a velocidade de degradação
+ é alta, mas ainda pode ser revertida.
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+O limite superior do nível crítico se refere ao ponto de irreversibilidade
+ de degradação do recurso.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A finalidade de um indicador de sustentabilidade é refletir as alterações
+ nas propriedades fundamentais de um sistema (Camino 
+\backslash
+& Müller, 1993) e advertir sobre eventuais perturbações potenciais (Ferraz,
+ 2003).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Alguns exemplos de indicadores do sistema produtivo: 
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Risco climático
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Diversidade de culturas anuais
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Tipo de solo
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Risco de déficit hídrico
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Diversidade de mercados
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Produtividade da terra
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Renovabilidade energética nos sistemas de produção
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Balanço de nutrientes (nitrogênio e fósforo)
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Presença de florestas
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Risco de epidemias
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+Limiares de sustentabilidade
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O limiar é um ponto que estabelece um limite, geralmente é o princípio,
+ mas no nosso caso, são os limites que apontam que determinada característica,
+ produto, ou serviço, está dentro do que for considerado sustentabilidade,
+ serão os pontos mínimo e máximo aceitáveis na amplitude da sustentabilidade.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Dentro desta escala, estabelecemos limiares críticos, ou seja, aqueles em
+ que concordamos que determinada situação (característica, produto, serviço)
+ apesar de não ser totalmente sustentável (nota máxima), possui níveis de
+ sustentabilidade aceitáveis para que a sustentabilidade seja efetiva (verdadeir
+a), apesar de não ser a ideal.
+ Neste caso, o limiar mínimo de sustentabilidade assumiria um valor variável.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Exemplo de limiar da sustentabilidade que poderão ser empregados pela equipe
+ do projeto:
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Nome do Indicador: distância Usina/Produção de cana
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Descrição do indicador: usualmente, em tradicionais regiões produtoras de
+ cana utiliza-se de uma distância econômica padrão da produção até a indústria,
+ de 20 quilômetros.
+ Esta distância é determinada pelos altos custos de transporte da cana até
+ a unidade industrial, sendo um dos fatores decisivos na rentabilidade da
+ lavoura (CNA/SENAR, 2007).
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Limiares de sustentabilidade, teria dois estados possíveis 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\lang brazilian
+Distância de até 20 km: Mais sustentável (+1)
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Distância de mais de 20 km: Menos sustentável (-1)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+
+\lang brazilian
+Índices de sustentabilidade
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Revela o estado de um sistema ou fenômeno, é uma síntese das características
+ ou variáveis analisadas, analisa dados através da junção de um jogo de
+ elementos com relacionamentos estabelecidos, este será o meio de agregação
+ dos indicadores, para formular o índice de sustentabilidade parcial, por
+ exemplo por dimensão ou geral
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Web semântica
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A web tem sido criada para possibilitar o acesso, intercâmbio e recuperação
+ de informações de maneira rápida e simples, seu crescimento exponencial
+ e caótico fez com que a mesma se tornasse hoje um gigantesco repositório
+ de documentos que dificulta a recuperação da informação.
+ Até o momento, não existe nenhuma estratégia abrangente e satisfatória
+ para a indexação de documentos por meio de “motores de busca” que seja
+ coerente com uma estrutura linguística.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Souza:2004"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A busca realizada pelos sistemas de recuperação de informação utiliza-se
+ de palavras-chave onde apenas a similaridade e o número de ocorrências
+ de certas palavras, no conteúdo de documentos, são levados em consideração
+ e não a semântica presente naquela informação
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Souza:2004"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Então, com o intuito de preencher esse gargalo semântico na busca por informaçõe
+s, surge a web semântica.
+ Ela tem como objetivo incorporar significado às informações presentes na
+ web, criando um ambiente onde agentes de software e usuários possam trabalhar
+ de forma cooperativa e entender o significado (sentido) presente nos dados
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brandao:2002"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Ontologia (ciência da computação)
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Uma ontologia é um sistema de organização e representação do conhecimento
+ do inglês 
+\emph on
+KOS Knowledge Organization System
+\emph default
+, é uma estrutura conceitual e computacional que permite representar o conhecime
+nto de qualquer domínio por meio de entidades, classificações, relações
+ semânticas, regras e axiomas.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Além do anterior, não existe um consenso sobre sua exata definição, segundo
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gruber:1995"
+
+\end_inset
+
+ uma ontologia é uma especificação formal e explícita de conceitos que compartil
+ham o mesmo domínio de informação.
+ Ainda nesse contexto 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noy:2001"
+
+\end_inset
+
+ relatam que as ontologias surgiram para compartilhar, organizar e especificar
+ conhecimentos de um determinado domínio.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Em ciências da computação as ontologias são representadas em formato 
+\emph on
+RDF/RDFS Resource Description Framework/Schema
+\emph default
+ ou 
+\emph on
+OWL Web Ontology Language
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Domain Specific Language
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Uma linguagem de domínio específico, em inglês 
+\emph on
+DSL Domain-Specific Language
+\emph default
+, é um tipo de linguagem de programação ou linguagem de especificação em
+ desenvolvimento de software e engenharia de domínio, dedicada à um domínio
+ de problema particular, uma técnica de representação de problema particular
+ e/ou uma técnica de solução particular.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O conceito não é novo - linguagens de programação de propósito especial
+ e todos os tipos de linguagem de modelagem/especificação sempre existiram,
+ mas o termo se tornou padrão devido a ascensão da modelagem de domínio
+ específico.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Sistemas especialistas para apoio à decisão
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Sistemas especialistas são programas que têm como objetivo simular o raciocínio
+ de um profissional “expert” em alguma área de conhecimento específica.
+ Sendo uma classe de programa de computador desenvolvido por pesquisadores
+ de Inteligência Artificial durante os anos 1970 e aplicado comercialmente
+ durante os anos 1980.
+ Em síntese, são programas constituídos por uma série de regras (às vezes
+ também heurísticas) que analisam informações normalmente fornecidas pelo
+ usuário do sistema sobre uma classe específica de problema ou domínio de
+ problema.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Considerações finais
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Neste capitulo foram apresentados os principais conceitos da avaliação da
+ sustentabilidade segundo o levantamento de indicadores que foi realizado
+ com antecedência nas etapas iniciais do projeto Sustenagro 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "oliveira:2013"
+
+\end_inset
+
+, além disso também foi apresentado os conceitos da web semântica e dos
+ sistemas especialistas, gerando assim uma base conceitual que suportará
+ a sistematização do processo de avaliação da sustentabilidade em sistemas
+ produtivos de cana-de-açúcar.
+ 
+\end_layout
+
+\end_body
+\end_document

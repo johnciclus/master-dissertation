@@ -1,0 +1,5069 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\begin_local_layout
+Float
+Type                  listing
+GuiName               Listing
+Placement             tbp
+Extension             lol
+NumberWithin          none
+Style                 ruled
+ListName              "List of Listings"
+LaTeXBuiltin          false
+End
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introdução
+\end_layout
+
+\begin_layout Standard
+Neste capítulo serão apresentados alguns resultados que já foram alcançados
+ com o desenvolvimento do 
+\shape italic
+Gazetteer
+\shape default
+ e discutidos futuros caminhos para aprimorar o projeto.
+ A seção 6.2 descreve a análise dos dados referente aos repositórios SpeciesLink
+ e GBIF, na seção 6.3 é descrito o método para aprimorar as coordenadas geográfic
+as.
+ A seção 6.4 relata como mapear os dados do 
+\shape italic
+Gazetteer
+\shape default
+ para ontologias e como armazená-los.
+ Na seção 6.5, uma análise entre as principais
+\shape italic
+ triplestores
+\shape default
+ para trabalhar com funções GeoSPARQL é relata.
+ A seção 6.6 descreve o protótipo de telas do 
+\shape italic
+Gazetteer
+\shape default
+ para suportar a prática de VGI e na seção 6.8 é descrita a arquitetura proposta
+ para o desenvolvimento do trabalho.
+\end_layout
+
+\begin_layout Section
+Análise dos dados utilizados referente aos repositórios SpeciesLink e GBIF
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Análise-dos-dados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para realizar este trabalho foram utilizados conjuntos de dados, referentes
+ a coletas biológicas do estado do Amazonas, que estão disponíveis nos repositór
+ios biológicos do 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "SpeciesLink"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GBIF"
+
+\end_inset
+
+.
+ Esses dados estão disponíveis no formato de arquivos “csv” (Comma Separated
+ Values) e “xls” (Excel).
+ 
+\end_layout
+
+\begin_layout Standard
+Ao analisar os dados do SpeciesLink e GBIF, Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tabela_GBIF"
+
+\end_inset
+
+ e Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "Tabela_SpeciesLink"
+
+\end_inset
+
+, uma métrica de qualidade, descrita na Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tabela_GBIF"
+
+\end_inset
+
+, foi criada para avaliar a precisão dos dados geográficos.
+ Nos registros coletados, é possível notar que apenas 24,85% de todos os
+ dados do SpeciesLink e 16,80% do GBIF apresentam informações geográficas
+ precisas, ou seja, contém o nome do local e município que um espécimen
+ foi recolhido e suas coordenadas geográficas (latitude e longitude).
+\end_layout
+
+\begin_layout Standard
+Outro ponto interessante verificado em relação a esses dados é, que entre
+ os registros de coletas marcados com qualidade de informação 2 e 3, se
+ verificou que 31,56% desses registros são referentes a coletas muito antigas,
+ datadas entre 1850 a 1979.
+ Essas coletas não poderiam ser georreferenciadas pela ausência de aparelhos
+ GPS e a dificuldade de se determinar coordenadas no meio da floresta sem
+ eles.
+ Essa afirmação também é comprovada por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Laurindo"
+
+\end_inset
+
+, onde é mostrado o modelo de coleta utilizado por biólogos.
+ Esses registros são muito importantes, pois mostram a ocorrência de espécies
+ ao longo de mais de um século.
+ 
+\end_layout
+
+\begin_layout Standard
+Como um dos objetivos deste trabalho é tratar os dados que contém informações
+ geográficas imprecisas, a partir de coletas com registros confiáveis, foram
+ utilizados os dados de qualidade 2 a 4 para desenvolver o 
+\shape italic
+Gazetteer
+\shape default
+.
+ Ou seja, um total de 80,21% dos registros do SpeciesLink e 88,1% do GBIF.
+ Como os registros remanescentes não apresentam informações de local de
+ coleta, latitude, longitude ou município, eles foram descartados por serem
+ inutilizáveis pois não há como associar a eles informações de localização
+ (além do fato de terem sido coletados no estado do Amazonas).
+ Desta forma, 19,79% dos registros do SpeciesLink e 12,1% do GBIF foram
+ retirados da construção do 
+\shape italic
+Gazetteer
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="45col%">
+<column alignment="center" valignment="top" width="15col%">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="15col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Informação Geográfica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Quantidade de Dados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Qualidade da informação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nome do lugar, Latitude, Longitude, e município
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60786
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24.85%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Somente nome do lugar e município
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+91419
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37.38%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Somente nome do lugar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43961
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17.98%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Somente município
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+41071
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16.79%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Não contém informações
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7310
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Demonstração da qualidade dos dados do SpeciesLink 
+\begin_inset CommandInset label
+LatexCommand label
+name "Tabela_SpeciesLink"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="45col%">
+<column alignment="center" valignment="top" width="15col%">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="15col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Informação Geográfica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Quantidade de Dados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Qualidade da informação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nome do lugar, Latitude, Longitude, e município
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25687
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16.80%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Somente nome do lugar e município
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11287
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.3%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Somente nome do lugar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+98954
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Somente município
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5915
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.8%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Não contém informações
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12886
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.3%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Demonstração da qualidade dos dados do GBIF 
+\begin_inset CommandInset label
+LatexCommand label
+name "tabela_GBIF"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ao se analisar os dados do SpeciesLink e GBIF foi possível observar vários
+ registros imprecisos como os exibidos na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "speciesLink_erro"
+
+\end_inset
+
+ e Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "GBIF_erro"
+
+\end_inset
+
+.
+ Várias coordenadas apontam para regiões fora dos limites do estado do Amazonas
+ como, por exemplo, no mar, na Argentina, nos países vizinhos ao Brasil
+ que fazem limite territorial com a Amazônia, como, por exemplo, Venezuela,
+ Colômbia e Peru.
+\end_layout
+
+\begin_layout Standard
+Esses valores errôneos aparecem ao longo do mapa distribuídos de forma horizonta
+l ou vertical em relação ao Amazonas, como visualizado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "speciesLink_erro"
+
+\end_inset
+
+.
+ Esses erros se devem provavelmente ao fato de usuários digitarem as coordenadas
+ geográficas manualmente, em tabelas eletrônicas, sem o auxilio de dispositivos
+ computadorizados para transmitir tais dados automaticamente dos dispositivos
+ GPS ou de programas que testem sua validade (por exemplo, se as coordenadas
+ estão dentro do município da coleta).
+\end_layout
+
+\begin_layout Standard
+Além dessa imprecisão, ao se analisar os dados do SpeciesLink e GBIF de
+ forma mais minuciosa, foi possível observar que várias localidades apresentavam
+ informações de latitude e longitude imprecisas como, por exemplo, a situação
+ mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:duckeA"
+
+\end_inset
+
+a e Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:duckeA"
+
+\end_inset
+
+b.
+ Nessas figuras, é possível visualizar que a Reserva Florestal Adolpho Ducke,
+ representada pelo ponto verde na sua localização correta, aparece em alguns
+ registros com coordenadas geográficas muito fora dessa posição, marcados
+ em vermelho nas figuras.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/erro1.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação das coordenadas extraídas dos dados do SpeciesLink.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "speciesLink_erro"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/erro2.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação das Coordenadas presentes nos dados do GBIF.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "GBIF_erro"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/map2.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coordenadas geográficas referentes a Reserva Adolpho Ducke presentes nos
+ dados do SpeciesLink.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/map1.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coordenadas geográficas referentes a Reserva Adolpho Ducke presentes nos
+ dados do GBIF.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coordenadas referentes a Reserva Florestal Adolpho Ducke contidas nos dados
+ do SpeciesLink Figura(a) e GBIF Figura(b).
+ Pontos vermelhos representam coordenadas geográficas erradas para a reserva.
+ O ponto verde representa a coordenada geográfica correta para a reserva.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:duckeA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tendo em vista a quantidade de erros presentes e a falta de coordenadas
+ geográficas nos registros do SpeciesLink e GBIF, foi desenvolvido um método
+ para aprimorar essas coordenadas, esse método é descrito na seção seguinte.
+\end_layout
+
+\begin_layout Section
+Método para aprimorar coordenadas geográficas
+\end_layout
+
+\begin_layout Standard
+A partir dos dados tratados pela etapa anterior, foi construído um 
+\shape italic
+script
+\shape default
+ para selecionar registros que indicam uma localidade, utilizando-se técnicas
+ presentes na RIG, como resolução de topônimos (expressões usadas para nomear
+ um lugar), onde uma lista de lugares como: rios, reservas, parques nacionais,
+ estradas foi gerada.
+\end_layout
+
+\begin_layout Standard
+Essa lista foi composta por 45 topônimos, onde cada um contém uma expressão
+ regular associada para extrair as informações da base de dados.
+ Por exemplo, foi possível recuperar registros que indicam uma reserva utilizand
+o-se da seguinte expressão regular (
+\emph on
+regular expression
+\emph default
+) em Java: 
+\family typewriter
+\shape italic
+\size footnotesize
+(?i)reserva
+\backslash
+b(.+?)[,|.|;|:]
+\family default
+\shape default
+\size default
+.
+ Nesse exemplo, todas as tuplas que possuem a palavra reserva no início
+ da palavra são retornadas.
+ Essa técnica também é utilizada por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GouveaLGFW08"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Machado2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Após recuperar os registros de um dado local, os mesmos foram agrupados
+ usando o algoritmo de agrupamento Star
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Aslam2004"
+
+\end_inset
+
+.
+ Nesse algoritmo, dado um objeto, todos os outros objetos similares a ele
+ são identificados e conectados, formando um grafo em forma de estrela,
+ de modo que todos os objetos de um cluster ficam conectados a um centroide.
+\end_layout
+
+\begin_layout Standard
+Em conjunto com o algoritmo de agrupamento, foi utilizada uma lista de 
+\shape italic
+stop words
+\shape default
+, que são palavras comuns que não apresentam nenhum significado linguístico.
+ A utilização dessa lista se deve ao fato que vários dados da base escolhida
+ contém termos como, por exemplo, "solo arenoso" ou "terra firme".
+\end_layout
+
+\begin_layout Standard
+Para verificar a similaridade entre as localidades e agrupá-las, foi utilizado
+ o coeficiente de similaridade de Jaccard 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jacard"
+
+\end_inset
+
+, que observa quão parecida são duas palavras, gerando valores no intervalo
+ de [0,1], onde o valor 0 representa palavras extremamente diferentes e
+ 1 palavras exatamente idênticas.
+ Essa abordagem se deve ao fato que nomes para a mesma localidade podem
+ ter várias formas de escrita para representar o mesmo local, como demostrado
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "escrita_dados"
+
+\end_inset
+
+ e também relatado por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Laurindo"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para utilizar o coeficiente de Jaccard, um limiar de similaridade entre
+ as localidades foi definido manualmente.
+ A partir de testes iniciais verificou-se que, quanto mais próximo de 1
+ era o valor desse limiar, mais grupos eram gerados.
+ Dessa forma, nomes referentes a uma mesma localidade eram separados em
+ grupos distintos pelo fato da grafia utilizada ser diferente, como demonstrado
+ pela Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "escrita_dados"
+
+\end_inset
+
+.
+ Assim, para se obter melhores resultados e verificar qual o melhor limiar
+ a ser utilizado, o experimento limitou-se aos valores 0.4, 0.5 e 0.6.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/aldofo.png
+	lyxscale 30
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de vários grupos criados de acordo com o limiar escolhido.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "escrita_dados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para amenizar a imprecisão das coordenadas geográficas mencionadas na seção
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Análise-dos-dados"
+
+\end_inset
+
+, foi criado um método para aprimorar as coordenadas geográficas da base
+ de dados utilizada.
+ Inicialmente esse método recupera as informações referente as localidades
+ do estado do Amazonas no repositório Geonames por meio de um Web Service.
+ Após obter os dados do Geonames, é feita uma verificação entre os locais
+ da base de dados do SpeciesLink e GBIF que são similares e não possuem
+ coordenadas geográficas, caso algum registro seja similar, a coordenada
+ presente no Geonames é inserida nos dados do SpeciesLink e do GBIF.
+\end_layout
+
+\begin_layout Standard
+A escolha do repositório Geonames se deve ao fato desse 
+\shape italic
+Gazetteer
+\shape default
+ conter mais de 10 milhões de nomes geográficos e 5,5 milhões de nomes alternati
+vos a lugares.
+ Sendo o mesmo largamente utilizado nos trabalhos em RIG, tais como 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ahlers:2013:AAG:2533888.2533938"
+
+\end_inset
+
+ e
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kessler2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Após a atualização das coordenadas, o método de aprimoramento de coordenadas
+ toma como base os diversos grupos existentes e uma sumarização dos valores
+ que se repetem frequentemente é feita, como mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sumariza"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para satisfazer esse método de sumarização, inicialmente é verificado se
+ a localidade possui um polígono nos dados do IBGE, em caso afirmativo,
+ os pontos que estão fora do polígono são descartados e então a mediana
+ dos pontos que estão dentro do polígono é feita.
+ Caso não exista um polígono nos dados do IBGE para representar a localidade
+ no 
+\shape italic
+Gazetteer
+\shape default
+, apenas é verificado os valores que aparecem com mais frequência no grupo.
+ Após obter o valor que mais se repete, suas informações geográficas são
+ atribuídas ao centroide indicando que aquela localidade assumirá o novo
+ valor para todos os registros, Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sumariza"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A escolha desta abordagem, se deve ao fato de que um valor que ocorre com
+ mais frequência em um grupo tende a ser o valor correto para uma localidade.
+ Essa abordagem estende a proposta da Lei de Linus, descrita por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haklay08"
+
+\end_inset
+
+.
+ Embora tenhamos proposto essa abordagem, garantimos apenas 84% de precisão
+ nessas coordenadas (Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tabela_coord"
+
+\end_inset
+
+), após realizar a análise das localidades associadas corretamente, apresentada
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "agrup_dados"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Limiar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Coordenadas Corretas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+84.3%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+83.8%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+84.1%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Precisão das coordenadas de acordo com o limiar de agrupamento.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tabela_coord"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/sumi.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Demonstração do método de sumarização de coordenadas geográficas, onde os
+ valores que ocorrem com mais frequência são identificados e atribuídos
+ para as demais coordenadas..
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "sumariza"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como relatado na seção 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Análise-dos-dados"
+
+\end_inset
+
+, os dados do SpeciesLink e do GBIF possuem grande imprecisão em suas coordenada
+s geográficas, sendo possível encontrar informações que apontam para o mar,
+ em países vizinhos ao Brasil na Argentina ou no nordeste do Brasil.
+ Para melhorar a qualidade desses dados, foi utilizado o método de sumarização
+ de coordenadas geográficas descrito neste trabalho, onde, após a execução
+ do mesmo, os dados gerados se mostraram mais precisos, como visualizado
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "coord_correta"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+O método a que vc está se referindo ano é o seu? Ou é o de alguém? Se é
+ o seu, dê um nome para ele.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/ok.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultado das coordenadas geográficas após o método de sumarização.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "coord_correta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Outra contribuição deste trabalho para melhorar a acurácia dos dados do
+ SpeciesLink e do GBIF, é a atualização os registros que não contém informações
+ geográficas, por meio de registros que possuem e foram validados pela técnica
+ de sumarização.
+\end_layout
+
+\begin_layout Standard
+Os repositórios SpeciesLink e GBIF contem 24,85% e 16,60% de registros com
+ coordenadas geográficas (longitude e latitude), para o estado do Amazonas.
+ Após aplicar a técnica de sumarização de coordenadas descrita neste trabalho,
+ o número de registros com coordenadas geográficas do GBIF aumentou para
+ 30,78% (foram inseridos cerca de 20.000 registros) e no SpeciesLink houve
+ um acréscimo de 37,33% (cerca de 30.000 registros foram inseridos), Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sumi_result"
+
+\end_inset
+
+.
+ Esses números representam um aumento significativo, de cerca de 90%, do
+ número de registos com informação geográfica.
+ Assim, podemos afirmar que o uso do 
+\shape italic
+Gazetteer
+\shape default
+ (com a técnica de sumarização, proposta neste trabalho) pode levar a um
+ aumento significativo da informação geográfica em dados típicos sobre biodivers
+idade.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/graf1.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quantidade de coordenadas geográficas recuperadas pelo 
+\shape italic
+Gazetteer.
+ 
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sumi_result"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estes dados evidenciam que, de fato, a construção do 
+\shape italic
+Gazetteer
+\shape default
+ contribui para amenizar os problemas de acurácia existentes em informações
+ geográficas na área de biodiversidade.
+ Além disso, é importante ressaltar que muitos desses registros são ocorrências
+ antigas, ou seja, quando o uso de equipamentos com GPS não era possível,
+ de valor inestimável pois os habitats onde essas coletas foram feitas não
+ existem mais ou foram alterados pela presença humana.
+ 
+\end_layout
+
+\begin_layout Standard
+Além de verificar a quantidade de dados que foram aprimorados, também é
+ necessário verificar se essas localidades agrupadas pertencem aos centroides
+ corretos e contém informações geográficas precisas.
+ Para isso foi realizada uma verificação dos locais agrupados.
+\end_layout
+
+\begin_layout Subsection
+Verificação dos locais agrupados
+\end_layout
+
+\begin_layout Standard
+Para verificar a precisão dos locais do 
+\shape italic
+Gazetteer,
+\shape default
+ foi feita uma análise com o objetivo de verificar a precisão do agrupamento
+ criado.
+
+\shape italic
+ 
+\shape default
+Para isso, uma amostra de 50 grupos foi selecionada aleatoriamente (as informaçõ
+es dos grupos são representadas pelos círculos brancos, na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "escrita_dados"
+
+\end_inset
+
+).
+ Após essa seleção, cada valor foi verificado manualmente.
+ Nessa verificação, foi analisado se o centroide que a localidade se referia
+ realmente era o correto.
+\end_layout
+
+\begin_layout Standard
+Ao se realizar a análise desses grupos coletados, foi possível verificar
+ que a coerência das localidades associadas foi bem significativa, em média
+ 84% das coordenadas estão associadas corretamente e que nenhum dos limiares
+ escolhidos apresenta grandes variações quanto à precisão dos dados associados,
+ com os valores 84,3% para o limar 0.4, 83,8% para o limar 0.5 e 84,1% para
+ o limar 0.6, como exibido na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "agrup_dados"
+
+\end_inset
+
+, na barra de Localidade associada
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Pode colocar alguns numeros no texto? O que vc se refere como bem significativa?
+ Os numeros podem ajudar a mostrar.
+ BTW, porque a figura ficou tao longe?
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/Agrupamento.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Precisão dos locais associados e grupos formados.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "agrup_dados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Embora se tenha conseguido valores significativos para esse agrupamento
+ de localidades, após uma análise detalhada desses grupos, foi possível
+ verificar que, embora algumas localidades apresentem maior similaridade
+ entre suas palavras e estejam num mesmo centroide, isso não garante que
+ elas representem um mesmo local como demonstrado na Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "agrup_imp1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="80text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Localidade em um mesmo centroide
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BR-319 sentido Porto Velho a ca 20 Km.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BR-319 sentido Porto Velho a ca 30 Km.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coordenadas que foram agrupadas de forma imprecisa.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "agrup_imp1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A ocorrência desse fator levou a redução do valor de localidades associadas
+ corretamente, pois locais distintos eram agrupados em um mesmo grupo.
+ Esse fenômeno é ocasionado pelo fato da técnica de agrupamento por similaridade
+ entre palavras não conseguir determinar a semântica de um local.
+\end_layout
+
+\begin_layout Standard
+Analisando esse fato, pode-se perceber que levar em consideração apenas
+ a similaridade não é uma boa abordagem para referenciar localidades, pois
+ ela despreza a semântica que está sendo passada naquele valor.
+ Por isso, as modificações futuras do 
+\shape italic
+Gazetteer
+\shape default
+ irão incluir o uso de ontologias para auxiliar na Resolução de Topônimos.
+\end_layout
+
+\begin_layout Standard
+Além da verificação interna entre as localidades agrupadas, também foi realizada
+ uma análise dos nomes representados pelos centroides.
+ Essa análise tem como intuito verificar se os centroides estão corretos
+ e se representam os possíveis grupos presentes na base de dados do SpeciesLink
+ e GBIF.
+ 
+\end_layout
+
+\begin_layout Standard
+Inicialmente o 
+\shape italic
+Gazetteer
+\shape default
+ construído possuía a quantidade de grupos exibidos pela Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "quant_lugares"
+
+\end_inset
+
+ e para realizar a validação desses grupos foi coletada uma amostra de 100
+ centroides aleatórios (os centroides são representados pelos círculos azul
+ e verde da Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "escrita_dados"
+
+\end_inset
+
+), ao se verificar esses dados, foi possível visualizar que vários centroides
+ representavam o mesmo local, como visualizado na Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "centroides"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Limiar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Quantidade de locais
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4602
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4782
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4921
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quantidade de locais presentes no 
+\shape italic
+Gazetteer.
+ 
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "quant_lugares"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="1">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="85text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Valores da amostra de centroides selecionados
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserva Florestal Adolpho Ducke
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserva Florestal Ducke (Associação) Ha A3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserva Florestal Duckec estr do Acará.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reserva Florestal Ducxke Manaus-Itacoatiara km 26 Área do Acará Floresta
+ de Campinarana
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Vários centroides representando o mesmo local.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "centroides"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O motivo da ocorrência desse fenômeno é o fato de vários registros terem
+ grafias diferentes, que vão desde erros ortográficos, para descrever localidade
+s, a descrições heterogêneas se referindo a locais semelhantes.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GouveaLGFW08"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ref correta?
+\end_layout
+
+\end_inset
+
+ relatam que o uso de similaridade entre as palavras para agrupar registros
+ pode gerar esse tipo de resultado nos dados, devido a grafia empregada.
+ 
+\end_layout
+
+\begin_layout Standard
+Devido à frequente ocorrência desse fato na amostra coletada, a taxa de
+ grupos associados corretamente foi muito penalizada e seus valores ficaram
+ abaixo dos resultados obtidos pelas localidades associadas corretamente,
+ em média 29% menos consistentes que as localidades, como visualizado na
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "agrup_dados"
+
+\end_inset
+
+.
+ A diferença de 29% obtida após a verificação dos centroides, informa que
+ foram criados diversos grupos para uma mesma localidade.
+ Em trabalhos futuros, pretendemos verificar a possibilidade de unir esses
+ grupos por suas coordenadas geográficas.
+\end_layout
+
+\begin_layout Standard
+Embora o número de grupos para representar todas as localidades possa ser
+ aprimorado, ainda foi possível contribuir com o aprimoramento das informações
+ geográficas presentes nos repositórios SpeciesLink e GBIF.
+ Além disso, com a construção do 
+\shape italic
+Gazetteer
+\shape default
+, especialistas podem extrair informações geográficas de grandes quantidades
+ de dados de forma mais rápida, tarefa essa que era muito laboriosa no quadro
+ inicial deste trabalho, onde os dados estavam armazenados em arquivos “csv”,
+ com várias informações imprecisas e difíceis de serem analisadas.
+\end_layout
+
+\begin_layout Standard
+Vale ressaltar que ao se trabalhar com dados reais, que foram coletados
+ e registrados por humanos, os mesmos estão sujeitos a grandes variações
+ e imprecisões, aumentando a complexidade ao se comparar os resultados deste
+ trabalho com outros 
+\shape italic
+Gazetteers
+\shape default
+ que utilizam dados sintéticos, extraídos de paginas web (que podem ter
+ vindo de bancos de dados).
+\end_layout
+
+\begin_layout Standard
+Após a construção do 
+\shape italic
+Gazetteer
+\shape default
+ e tratamento dos dados do SpeciesLink e GBIF, foram utilizadas ontologias
+ geoespaciais para mapear os dados gerados pelo 
+\shape italic
+Gazetteer
+\shape default
+ para uma 
+\emph on
+triplestore
+\emph default
+.
+ Esse mapeamento é descrito na próxima seção.
+\end_layout
+
+\begin_layout Section
+Mapeamento dos dados e disponibilização do 
+\shape italic
+Endpoint
+\shape default
+ GeoSPARQL
+\end_layout
+
+\begin_layout Standard
+Inicialmente, os dados geográficos frutos deste experimento foram mapeados
+ usando as ontologias LinkedGeoData e GeoSPARQL.
+ O uso dessas ontologias se deve ao fato de ambas já terem sido validadas
+ por especialistas e utilizadas por vários trabalhos tais como, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parundekar2010"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "linkedgeodata"
+
+\end_inset
+
+.
+ A reutilização de ontologias possibilita seguir os principais padrões já
+ especificados e validados na área, além de reduzir o trabalho para construção
+ do 
+\shape italic
+Gazetteer
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Essas duas ontologias existem separadamente e para conectá-las foi utilizada
+ ferramenta de edição de ontologias, Protégé 4, Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "ont_protege"
+
+\end_inset
+
+.
+ Por meio da classe 
+\shape italic
+Feature,
+\shape default
+ presente em ambas ontologias, as mesmas foram unificadas utilizando-se
+ o relacionamento 
+\shape italic
+EquivalentTo
+\shape default
+ (≡) que possibilita dizer que as duas classes são equivalentes, Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "ont_protege"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Assim, ao se unificar as duas ontologias, é possível mapear as informações
+ geográficas, latitude e longitude para o 
+\shape italic
+data property asWKT
+\shape default
+, fornecido pela ontologia GeoSPARQL, conforme exemplificado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "asWKT_map"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/figura.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mapeamento das informações geográficas para a especificação 
+\shape italic
+asWKT
+\shape default
+ (Representação simplificada).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "asWKT_map"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para mapear as informações do 
+\shape italic
+Gazetteer
+\shape default
+ referentes a localidade, município e data do registro para a ontologia,
+ foram criados os 
+\shape italic
+data properties:
+\shape default
+ 
+\shape italic
+locality, county e date
+\shape default
+, já que a ontologia LinkedGeoData não continha esses 
+\shape italic
+data properties
+\shape default
+.
+ Já as coordenadas geográficas, pontos e polígonos, foram mapeadas para
+ o 
+\shape italic
+data property asWKT,
+\shape default
+ presente na ontologia GeoSPARQL.
+\end_layout
+
+\begin_layout Standard
+Após representar os dados do 
+\shape italic
+Gazetteer
+\shape default
+ (locais, municípios, data e pontos) é necessário criar indivíduos para
+ representar as localidades e as geometrias que compõe as coordenadas geográfica
+s.
+ Para realizar essa representação, é necessário criar um indivíduo representando
+ uma localidade e unificá-lo com um indivíduo que representa uma geometria,
+ por meio do 
+\shape italic
+object property hasGeometry
+\shape default
+ (Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:RepreUniao"
+
+\end_inset
+
+) .
+ Essa relação define que um indivíduo pode possuir várias Geometrias, permitindo
+ assim à 
+\shape italic
+triplestore
+\shape default
+ realizar inferências geográficas sobre os dados utilizando as funções,
+ definidas pelo GeoSPARQL.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/ligacaoGazetteer.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação da união entre um individo referente a uma localidade com
+ outro individuo que representa uma geometria usando o
+\shape italic
+ object property hasGeometry
+\shape default
+, disponibilizado pela ontologia GeoSPARQL.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RepreUniao"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/ontologiaProtege.png
+	scale 250
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Edição da ontologia utilizada pelo 
+\shape italic
+Gazetteer 
+\shape default
+com auxílio da ferramenta Protégé.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ont_protege"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Após o mapeamento dos dados do 
+\shape italic
+Gazetteer,
+\shape default
+ usando a ontologia, os registros forram armazenados na 
+\shape italic
+triplestore
+\shape default
+ Parliament, que tem como função servir de 
+\shape italic
+endpoint
+\shape default
+ para realização de consultas.
+ O Parliament é um software gratuito que permite o armazenamento de triplas
+ em RDF, manipulação de OWL e disponibilização de 
+\shape italic
+endpoints
+\shape default
+ GeoSPARQL para realizar consultas.
+ A escolha inicial da 
+\emph on
+triplestore
+\emph default
+ Parliament, se deveu a possibilidade dela utilizar OWL e poder disponibilizar
+ 
+\shape italic
+endpoints
+\shape default
+ GeoSPARQL.
+\end_layout
+
+\begin_layout Standard
+O armazenamento dos dados numa 
+\shape italic
+triplestore
+\shape default
+ promove a fácil disponibilização dos dados como 
+\shape italic
+Linked Open Data
+\shape default
+.
+ Um dos objetivos deste projeto é expor, compartilhar e conectar dados,
+ informação e conhecimento na web semântica sobre dados referentes a localizaçõe
+s geográficas relacionadas a biodiversidade.
+ Linked Open Data basicamente define as melhores técnicas para isso 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Heath2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Com intuito de verificar a possibilidade de realizar a expansão de consultas
+ geográficas proposta por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KeBler:2009:ANG:1653771.1653787"
+
+\end_inset
+
+, utilizando-se de 
+\shape italic
+endpoints
+\shape default
+ para realização de consultas, foram selecionados três repositórios que
+ contém entidades geográficas, Geonames, WikiMapia e Wikipédia.
+ No entanto, verificou-se que nenhum desses repositórios possui implementações
+ de 
+\shape italic
+endpoints
+\shape default
+ SPARQL para seus dados.
+ Dessa forma, foi necessário encontrar outros repositórios que
+\shape italic
+ 
+\shape default
+contivessem 
+\shape italic
+dumps
+\shape default
+ dos dados do Geonames, WikiMapia e Wikipédia e disponibilizassem os mesmos
+ através de 
+\shape italic
+endpoints
+\shape default
+ SPARQL.
+\end_layout
+
+\begin_layout Standard
+Inicialmente, foi realizada uma análise de 
+\shape italic
+endpoints
+\shape default
+ SPARQL/GeoSPARQL no W3C.
+ Devido ao fato do WikiMapia não possuir dados em RDF e não ser possível
+ encontrar nenhum repositório que tenha feito o 
+\shape italic
+parser
+\shape default
+ de seus dados para esse formato, esse 
+\shape italic
+Gazetteer
+\shape default
+ foi descartado do experimento.
+ Sendo assim, foram selecionados somente 
+\shape italic
+endpoints
+\shape default
+ que possuem informações sobre os repositórios Geonames e Wikipédia.
+\end_layout
+
+\begin_layout Standard
+Junto a essa análise, também foi verificado se os 
+\shape italic
+endpoints
+\shape default
+ disponibilizavam implementações de GeoSPARQL para realizar consultas utilizando
+ as funções geoespaciais, como, por exemplo, verificar se um polígono está
+ dentro de outro através da função 
+\shape italic
+geo:sfwithin
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+A busca por essas fontes de dados, resultou em três 
+\shape italic
+endpoints
+\shape default
+, Dbpedia
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://dbpedia.org/sparql
+\end_layout
+
+\end_inset
+
+, Factor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://factforge.net/
+\end_layout
+
+\end_inset
+
+ e 
+\emph on
+GeoSPARQL
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.geosparql.org/
+\end_layout
+
+\end_inset
+
+.
+ Sendo que dentre eles, o Factor e o 
+\emph on
+GeoSPARQL
+\emph default
+ contém informações sobre o Geonames e o Dbpedia sobre a Wikipedia.
+ 
+\end_layout
+
+\begin_layout Standard
+Ao se iniciar as consultas semânticas, foi notado que o 
+\shape italic
+endpoint
+\shape default
+ 
+\emph on
+GeoSPARQL
+\emph default
+ contém apenas informações referente aos municípios brasileiros, desprezando
+ locais como reservas naturais, rios, lagos, entre outros.
+ Também foi possível notar que, dentre os três 
+\emph on
+endpoints,
+\emph default
+ somente ele permitia realizar funções geoespaciais.
+ No entanto, como seus dados não abordam reservas, lagos, rios, como os
+ outros, ele foi descartado do experimento.
+\end_layout
+
+\begin_layout Standard
+Para realizar as queries, uma amostra de 60 localidades da base de dados
+ inicial do SpeciesLink e GBIF foi selecionada.
+ Dessa amostra, foi criada uma base de dados confiável sobre quais registros
+ são relevantes para uma determinada informação.
+\end_layout
+
+\begin_layout Standard
+Após a construção dessa base de dados, as consultas foram submetidas aos
+ 
+\shape italic
+endpoints.
+
+\shape default
+ Os resultados de precisão e revocação de cada um são apresentados na Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "semantic_search"
+
+\end_inset
+
+.
+ Nesses resultados é possível verificar que, com a utilização da busca semântica
+, é possível obter valores de precisão e revocação próximos, ou seja, no
+ 
+\shape italic
+Gazetteer
+\shape default
+ implementado foi possível obter 0,566 de precisão e 0,643 de revocação,
+ o que não acontece em sistemas de busca por palavras chaves como relatado
+ por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Amanqui2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/precision.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados de precisão e revocação após as buscas semânticas realizadas.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "semantic_search"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No entanto, devido ao fato desses repositórios não conterem todos os locais
+ pesquisados a revocação dos dados foi de, no máximo, 0,54.
+ Demonstrando assim que a criação de outro 
+\shape italic
+endpoint
+\shape default
+ para disponibilizar dados sobre localidades relacionadas à coletas biológicas
+ é valida.
+ Além disso, ao realizar as consultas foi possível comprovar um dos desafios
+ citados por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kessler2009"
+
+\end_inset
+
+, em seu artigo sobre a próxima geração de 
+\shape italic
+Gazetteers
+\shape default
+, pois, de fato, alguns repositórios, como em especial o DBpedia, possuem
+ algumas localidades que não foram encontradas na 
+\shape italic
+triplestore
+\shape default
+ utilizado neste trabalho.
+ 
+\end_layout
+
+\begin_layout Standard
+Outro motivo que torna válida a criação do 
+\shape italic
+Gazetteer
+\shape default
+ e a disponibilização de seus dados em um 
+\shape italic
+endpoint
+\shape default
+ GeoSPARQL, é a evidente falta de mecanismos que contenham informações sobre
+ localidades brasileiras em 
+\shape italic
+endpoints
+\shape default
+ e que possibilitem o uso de funções geoespaciais.
+ Fato esse que foi evidenciado na busca por 
+\shape italic
+endpoints,
+\shape default
+ que contivessem dados do Geonames, WikiMapia e Wikipédia, realizada neste
+ trabalho: informações sobre municípios brasileiros puderam ser recuperadas
+ apenas num único 
+\shape italic
+endpoint
+\shape default
+ que realizava consultas geoespaciais.
+ 
+\end_layout
+
+\begin_layout Standard
+A disponibilização de um 
+\shape italic
+endpoint
+\shape default
+ GeoSPARQL é importante, devido a necessidade de se realizar consultas geoespaci
+ais que contenham significado semântico.
+ Isso fica claro no exemplo da consulta (Algoritmo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "consulta1"
+
+\end_inset
+
+) que mostra uma busca por todas as fazendas que estão dentro de uma reserva
+ florestal.
+ Tal consulta, utilizando-se sistemas de busca por palavras-chave, não é
+ eficiente, conforme relatado por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Amanqui2013"
+
+\end_inset
+
+.
+ Além disso, a realização manual desse tipo de consulta por especialistas
+ seria uma tarefa muito laboriosa, logo o uso de buscas semânticas é extremament
+e útil para consultas complexas como essa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+\end_layout
+
+\begin_layout LyX-Code
+PREFIX geo:<http://www.opengis.net/ont/geosparql#>
+\end_layout
+
+\begin_layout LyX-Code
+PREFIX geof:<http://www.opengis.net/def/function/geosparql/>
+\end_layout
+
+\begin_layout LyX-Code
+PREFIX dbp:<http://dbpedia.org/ontology/>
+\end_layout
+
+\begin_layout LyX-Code
+PREFIX lgdo:<http://linkedgeodata.org/ontology/> 
+\end_layout
+
+\begin_layout LyX-Code
+SELECT ?p ?a ?w1 ?w2 
+\end_layout
+
+\begin_layout LyX-Code
+WHERE { 
+\end_layout
+
+\begin_layout LyX-Code
+    ?p rdf:type lgdo:Farm .
+\end_layout
+
+\begin_layout LyX-Code
+    ?p geo:hasGeometry ?g2 .
+\end_layout
+
+\begin_layout LyX-Code
+    ?g2 geo:asWKT ?w2 .
+\end_layout
+
+\begin_layout LyX-Code
+    ?a rdf:type dbp:ProtectedArea .
+\end_layout
+
+\begin_layout LyX-Code
+    ?a geo:hasGeometry ?g1 .
+\end_layout
+
+\begin_layout LyX-Code
+    ?g1 geo:asWKT ?w1 .
+\end_layout
+
+\begin_layout LyX-Code
+    FILTER geof:sfWithin(?w2, ?w1)
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consulta por fazendas dentro de áreas protegidas.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "consulta1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Outro exemplo de consulta que possui significado semântico, é a consulta
+ exibida no Algoritmo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "consulta2"
+
+\end_inset
+
+.
+ Nessa consulta, é possível localizar todas as cachoeiras que estão a menos
+ de 1000 metros de alguma represa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout LyX-Code
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+PREFIX geo:<http://www.opengis.net/ont/geosparql#> 
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+PREFIX geof:<http://www.opengis.net/def/function/geosparql/>
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+PREFIX lgdo:<http://linkedgeodata.org/ontology/>
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+SELECT ?p ?a 
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+WHERE { 
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   ?p rdf:type lgdo:Dam .
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   ?p geo:hasGeometry ?g2 .
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   ?g2 geo:asWKT ?w2 .
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   ?a rdf:type lgdo:Waterfall .
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   ?a geo:hasGeometry ?g1 .
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   ?g1 geo:asWKT ?w1 .
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+   FILTER(geof:distance(?w1,?w2,units:metre)<1000)
+\end_layout
+
+\begin_layout LyX-Code
+\paragraph_spacing single
+\noindent
+}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consulta para verificar as cachoeiras que estão a uma distância de 1000
+ metros de alguma represa.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "consulta2"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os resultados obtidos neste trabalho foram publicados, no artigo 
+\shape italic
+A Gazetteer for Biodiversity Data as a Linked Open Data Solution
+\shape default
+ na conferência Web2Touch 2014 - 
+\shape italic
+Modelling the Collaborative Web Knowledge
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Silvio2014"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ref!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Durante o processo de desenvolvimento do 
+\shape italic
+Gazetteer
+\shape default
+ foi possível encontrar outras duas 
+\shape italic
+triplestores
+\shape default
+ que trabalham com implementações GeoSPARQL, o Strabon e o uSeekM, e, para
+ avalia-las, foram realizados os testes descritos na próxima seção.
+\end_layout
+
+\begin_layout Section
+Avaliação das 
+\shape italic
+triplestores
+\end_layout
+
+\begin_layout Standard
+Com intuito de verificar a performance das 
+\shape italic
+triplestores
+\shape default
+ Strabon, uSeekM e Parliament.
+ Além de verificar se a substituição do
+\shape italic
+ triplestore
+\shape default
+ Parliament era vantajosa, conforme relatado no experimento realizado por
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "journals/corr/abs-1305-5653"
+
+\end_inset
+
+, foram realizados testes utilizando buscas semânticas que continhamém funções
+ GeoSPARQL não topologicas, junções espaciais e seleções espaciais.
+\end_layout
+
+\begin_layout Standard
+Para realizar este teste, uma base de dados contendo 40 mil pontos sobre
+ localidades referentes ao repositório do Geonames foi selecionada, essa
+ base pode ser encontrada no link, 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://geographica.di.uoa.gr/datasets/geonames.tar.gz
+\end_layout
+
+\end_inset
+
+.
+ Já as 
+\shape italic
+triplestore
+\shape default
+ utilizados podem ser acessados por meio dos links, Parliament 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://biomac.icmc.usp.br:8080/parliament/
+\end_layout
+
+\end_inset
+
+, Strabon: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://biomac.icmc.usp.br:8080/strabon/
+\end_layout
+
+\end_inset
+
+, UseekM: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://biomac.icmc.usp.br:8080/useekm-workbench/repositories/SYSTEM/query
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Com intuito de testar a disponibilidade do serviço GeoSPARQL nessas 
+\shape italic
+triplestores
+\shape default
+, um 
+\shape italic
+Web Client
+\shape default
+ Java usando requisições RESTful (acessando os dados das 
+\emph on
+triplestores
+\emph default
+ usando requisições HTTP) foi desenvolvido.
+ Essa cliente permite realizar as solicitações às 
+\shape italic
+triplestores
+\shape default
+ segundo os padrões de Linked Open Data especificados por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Heath2011"
+
+\end_inset
+
+.
+ O código fonte dessa implementação pode ser acessado no link 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/silviodc/Triple_Store_Test.git
+\end_layout
+
+\end_inset
+
+ , onde é possível obter o projeto para replicar o experimento e contribuir
+ com melhorias para o mesmo.
+\end_layout
+
+\begin_layout Standard
+A máquina utilizada para executar os experimentos possui as seguintes configuraç
+ões, processador: Intel Xeon X5560 2.80GHz com 8 cores e 8 MB de cache, 8
+ GB memória e disco rígido de 1 TB com 7200 rpm.
+ Nessa máquina foi instalado o Parliament 2.7.4, Strabon 3.2 e uSeekM 1.2.1,
+ todos utilizando o Tomcat 6.
+\end_layout
+
+\begin_layout Standard
+Para medir o tempo de resposta para cada consulta, foi usado o tempo necessário
+ desde o envio de uma consulta por requisições HTTP até o retorno dos resultados
+ para o 
+\shape italic
+Web Client
+\shape default
+.
+ Além disso, um tempo limite de 30 minutos para a execução de cada requisição
+ foi definido.
+\end_layout
+
+\begin_layout Standard
+Para iniciar os testes foram implementadas 6 consultas com funções GeoSPARQL
+ dividas em 3 categorias:
+\end_layout
+
+\begin_layout Enumerate
+Funções não topológicas, ou seja que não descrevem conceitos de vizinhança,
+ incidência e sobreposição, para essas consultas foram utilizadas as funções
+ 
+\shape italic
+geof:convexHull
+\shape default
+ e 
+\shape italic
+geof:buffer
+\shape default
+, ambas retornam uma geometria referente a algum objeto contido na 
+\shape italic
+triplestore
+\shape default
+.
+\end_layout
+
+\begin_layout Enumerate
+Junções espaciais, definidas pelas funções 
+\shape italic
+geof:sfWithin
+\shape default
+ e 
+\shape italic
+geof:sfIntersects, 
+\shape default
+essas funções tem como objetivo verificar se dado dois objetos A e B, o
+ objeto A está contido ou intercepta o objeto B.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Consultas de seleção espacial, ou seja, a partir de um polígono ou ponto
+ informados manualmente verifica-se se algum ponto ou polígono armazenado
+ na 
+\emph on
+triplestore
+\emph default
+ está contido ou intercepta o polígono informado manualmente.
+\end_layout
+
+\begin_layout Standard
+Cada uma das implementações, referente as consultas utilizadas, está descrita
+ no Apêndice 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:Apendice_A"
+
+\end_inset
+
+.
+ A seguir, o resultado do experimento com as três 
+\shape italic
+triplestore
+\shape default
+ é descrito e uma análise das 
+\shape italic
+triplestore
+\shape default
+ é realizada.
+\end_layout
+
+\begin_layout Subsection
+Comparação de buscas Geoespaciais entre 
+\shape italic
+triplesotres
+\end_layout
+
+\begin_layout Standard
+O primeiro conjunto de consultas testadas foram as não topológicas, 
+\shape italic
+queries
+\shape default
+ 1 e 2 no Apêndice 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:Apendice_A"
+
+\end_inset
+
+, nessas consultas a 
+\shape italic
+tripleStore
+\shape default
+ uSeekM obteve melhor desempenho em relação às outras duas.
+ Esse resultado é devido ao fato das funções não topológicas serem computacional
+mente intensivas e, neste ponto, a implementação do uSeekM trabalha melhor
+ com dados de I/O como relatado por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "journals/corr/abs-1305-5653"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nas consultas referentes as junções espaciais, a 
+\shape italic
+triplestore
+\shape default
+ Strabon obteve os melhores resultados.
+ Esse resultado se deu devido ao fato das 
+\shape italic
+triplestores
+\shape default
+ uSeekM e Parliament necessitarem realizar um produto cartesiano de suas
+ coordenadas para assim verificar se um objeto A está contido ou intercepta
+ um objeto B.
+ Além disso, vale ressaltar que ambas, uSeekM e Parliament, não concluíram
+ a consulta no tempo hábil definido como apresentado na Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "temp_query"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por fim, no conjunto de consultas referente a seleções espaciais, as
+\shape italic
+ triplestores
+\shape default
+ Strabon e uSeekM obtiveram resultados próximos, sendo que a Strabon foi
+ um pouco melhor.
+ Isso é devido ao fato que ambos utilizam o SGBD PostGIS para realizar o
+ processo das 
+\shape italic
+queries
+\shape default
+ que utilizam as seleções espaciais, sendo que, após esse passo, a uSeekM
+ continua a realizar seu plano de consulta usando a 
+\shape italic
+triplestore
+\shape default
+ nativa do Sesame e isso acarreta num pouco mais de sobrecarga.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Strabon
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+uSeekM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Parliament
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funções Não Topológicas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.51 seg 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+1.21 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15.33 seg
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.68 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+0.294 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26.6 seg
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Junções Espaciais
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+2 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+> 30 min 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+> 30 min
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+1.85 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+> 30 min
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+> 30 min
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seleção Espacial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+0.114 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.364 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.27 seg
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+0.111 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.207 seg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15.94 seg
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados da execução das consultas geoespaciais nas 
+\shape italic
+triplestore
+\shape default
+ Strabom, uSeekM e Parliament.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "temp_query"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Além da verificação das consultas, foi realizado um estudo sobre a arquitetura
+ e funcionalidades implementadas pelas três 
+\emph on
+triplestores
+\emph default
+.
+ Nesse estudo, foi verificado se elas implementavam as funcionalidades referente
+s a RDFS+OWL (OWL 2, OWL 2 RL ou LD) ou algum suporte a regras.
+\end_layout
+
+\begin_layout Standard
+Ao se verificar a 
+\emph on
+triplestore
+\emph default
+ uSeekM, foi possível constatar algumas limitações, como: 
+\end_layout
+
+\begin_layout Enumerate
+A necessidade de todas as geometrias especificarem a utilização do sistema
+ de referência espacial 4326/WGS84.
+\end_layout
+
+\begin_layout Enumerate
+A utilização da função ORDER BY é diferente da especificada na linguagem
+ SPARQL (ações para corrigir isso estão em aberto).
+\end_layout
+
+\begin_layout Enumerate
+Algumas funções geométricas não possuem total suporte:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+A função geobuffer apenas computa as coordenadas que estão assumidas num
+ mesmo plano cartesiano.
+\end_layout
+
+\begin_layout Enumerate
+A função getSRID possui alguns problemas para retornar URIs referentes aos
+ pontos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Não é possível realizar 
+\shape italic
+Query Rewrite Extension
+\shape default
+ e os desenvolvedores não possuem planos para suportá-la.
+\end_layout
+
+\begin_layout Enumerate
+A indexação de declarações com BNode's não é suportada, ou seja, não é possível
+ criar um nó em um grafo RDF sem que sua URI seja especificada.
+\end_layout
+
+\begin_layout Enumerate
+Não possui suporte a OWL ou regras em seu 
+\shape italic
+backend
+\shape default
+ padrão.
+\end_layout
+
+\begin_layout Enumerate
+A API Jena não consegue se comunicar diretamente com seu serviço SPARQL,
+ sendo necessário realizar modificações.
+\end_layout
+
+\begin_layout Standard
+Ao se verificar a 
+\emph on
+triplestore
+\emph default
+ Strabon foi possível constatar que:
+\end_layout
+
+\begin_layout Enumerate
+Ela não possuir suporte a OWL ou regras.
+\end_layout
+
+\begin_layout Enumerate
+Não é possível realizar 
+\shape italic
+Query Rewrite Extension
+\shape default
+, no entanto os desenvolvedores possuem planos para implementar essa funcionalid
+ade.
+\end_layout
+
+\begin_layout Enumerate
+O modelo da arquitetura, em que o Strabon foi implementado, não permite
+ que sua SAIL RDBMS seja 
+\begin_inset Quotes eld
+\end_inset
+
+empilhável
+\begin_inset Quotes erd
+\end_inset
+
+, ou seja, não é possível usar outras SAILs em conjunto com a implementação
+ do Strabon.
+\end_layout
+
+\begin_layout Enumerate
+A inserção de arquivos contendo triplas precisa ser realizada localmente,
+ caso contrário o Strabon barra a inserção de conteúdo.
+\end_layout
+
+\begin_layout Enumerate
+A API Jena pode se comunicar diretamente com seu serviço SPARQL.
+\end_layout
+
+\begin_layout Standard
+Ao se verificar a 
+\emph on
+triplestore
+\emph default
+ Parliament foi possível constatar que:
+\end_layout
+
+\begin_layout Enumerate
+A Parliament possui a vantagem de utilizar arquivos para implementar o armazenam
+ento de suas triplas, sendo assim, é mais fácil a realização de backups
+ ou deslocamento de seus dados.
+ No entanto, esses arquivos são fáceis de serem corrompidos e isso acarreta
+ inviabilização de seus dados para uso.
+\end_layout
+
+\begin_layout Enumerate
+Possui suporte para OWL e regras.
+\end_layout
+
+\begin_layout Enumerate
+A API Jena pode se comunicar diretamente com seu serviço SPARQL.
+\end_layout
+
+\begin_layout Enumerate
+A criação de grafos não pode ser feita remotamente, ou seja, ao inserir
+ triplas é necessário implementar um método para criá-las.
+ Para isso, é necessário usar funções disponíveis em sua API, ou seja, não
+ é possível criar grafos diretamente com a API Jena.
+\end_layout
+
+\begin_layout Enumerate
+Sua versão 2.7.6 ainda não é totalmente estável em sistemas UNIX.
+\end_layout
+
+\begin_layout Standard
+Com estes resultados, é possível verificar que todas as 
+\shape italic
+triplestores
+\shape default
+ necessitam de ajustes.
+ Futuramente será verificada a possibilidade de utilização da 
+\shape italic
+triplestore
+\shape default
+ uSeekM em conjunto com a 
+\emph on
+triplestore
+\emph default
+ BigData: será testado se é possível usar a SAIL API da uSeekM para oferecer
+ as funcionalidades de GeoSPARQL para a 
+\shape italic
+triplestore
+\shape default
+ BigData (que possui suporte básico para OWL).
+ Caso isso seja possível, ambos serão adotados para o desenvolvimento deste
+ trabalho.
+\end_layout
+
+\begin_layout Section
+Protótipo para o 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Protótipo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Devido ao fato de iniciativas voluntárias de VGI serem desenvolvidas por
+ um determinado grupo que possui um escopo especifico em uma determinada
+ área de interesse, é importante garantir que os sistemas VGI atendam a
+ determinados requisitos.
+ Dentre eles 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Brian2014"
+
+\end_inset
+
+ descreve que:
+\end_layout
+
+\begin_layout Enumerate
+Um dos aspectos mais importantes para sistemas que oferecem suporte a VIG
+ deve ser sua forma simplificada de receber novas contribuições, pois sistemas
+ complexos, que requerem diversos passos aos usuários para inserirem informações
+, reduzem o número de contribuições.
+\end_layout
+
+\begin_layout Enumerate
+Os contribuintes devem ser capazes de ver o resultado de suas contribuições,
+ especialmente em mapas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Enquanto mapas referentes a sistemas GIS interativos são a melhor maneira
+ de mapear os dados, eles não são necessariamente os mais amigáveis.
+ Os meios pelos quais o público interage com os mapas devem ser tão intuitivo
+ quanto possível, sem a necessidade de tutoriais extensos.
+\end_layout
+
+\begin_layout Enumerate
+Web Sites e interfaces públicas devem disponibilizar suas informações atualizada
+s, pois, se as informações fornecidas num web site não forem atuais, os
+ usuários e participantes irão se desmotivar com o projeto.
+ 
+\end_layout
+
+\begin_layout Standard
+Com intuito de atender a esses requisitos, vamos criar um protótipo de telas
+ para ser validado junto aos biólogos.
+ A seguir serão descritas as principais telas, referentes a inserção, buscas,
+ validação de coordenadas e informações de Linked Open Data.
+\end_layout
+
+\begin_layout Standard
+A tela inicial do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo, apresentada na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tela_insert"
+
+\end_inset
+
+, contém, na parte superior, um campo de busca que permite aos usuários
+ entrarem com o nome de alguma localidade para ser pesquisada no sistema.
+ Além disso, é possível definir qual a qualidade das informações a serem
+ pesquisadas por meio do campo de escolha de qualidade.
+\end_layout
+
+\begin_layout Standard
+A qualidade escolhida permitirá retornar informações geográficas de acordo
+ com o tipo de usuário que disponibilizou a mesma, como, por exemplo, biólogos
+ do INPA, usuários com grande aceitação de seus registros ou dados do IBGE.
+ Futuramente essa métrica de qualidade será definida em conjunto com os
+ biólogos.
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tela_insert"
+
+\end_inset
+
+, pode ser observado o mapa de navegação principal que contém as funcionalidades
+ de navegação e marcação das coordenadas geográficas como, por exemplo,
+ pontos, polígonos e linhas.
+ Esse mapa também permite aos usuários visualizarem informações referente
+ as localidades.
+\end_layout
+
+\begin_layout Standard
+Ao lado esquerdo, o usuário encontra um botão para recuperar localidades
+ que não possuem coordenadas geográficas.
+ Quando o sistema recuperar essas informações, as mesmas serão listadas
+ na tabela abaixo desse botão.
+ Vale ressaltar que essa mesma tabela também exibe as informações sobre
+ coordenadas geográficas em conjunto com o mapa de navegação.
+\end_layout
+
+\begin_layout Standard
+Na parte inferior esquerda, são exibidos os campos para o usuário contribuir
+ com uma nova localidade ou aprimorar algum registro já existente na base
+ de dados.
+ Para aprimorar alguma localidade, o usuário deve selecionar algum local
+ na tabela de locais e então entrar com as informações.
+ As informações necessárias são: nome do local, a GeoTAG referente ao tipo
+ do local, o link referente a alguma fonte de 
+\shape italic
+Linked Open Data
+\shape default
+ e as informações geográficas que podem ser inseridas manualmente ou através
+ do mapa.
+\end_layout
+
+\begin_layout Standard
+Por fim, no lado direito inferior, são apresentadas as GeoTags, que podem
+ ser utilizadas para facilitar o processo de busca por localidades e as
+ informações estatísticas dos lugares contidas no 
+\shape italic
+Gazetteer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/Insert_Data (4).png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela referente a funcionalidade de inserção de novos locais no 
+\shape italic
+Gazetteer.
+ 
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tela_insert"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A próxima tela, apresentada na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tela_busca"
+
+\end_inset
+
+, representa a funcionalidade de busca.
+ Após o usuário digitar alguma localidade e procurar suas informações, por
+ exemplo, "fazendas próximas a Itacoatiara", as informações sobre as localidades
+ que satisfazem essa busca são recuperadas e exibidas no mapa de navegação
+ e na tabela de localidades.
+\end_layout
+
+\begin_layout Standard
+Uma vez que os dados estão na tabela de informações, o usuário pode selecionar
+ alguma localidade.
+ Ao selecionar o registro, as informações referentes a essa fazenda são
+ mostradas no centro do canto inferior da tela.
+ Essas informações são a URI da localidade pesquisada, o nome da localidade,
+ o número de registros que possuem o mesmo nome de localidade e o número
+ de pessoas que concordam com a informação exibida.
+\end_layout
+
+\begin_layout Standard
+No lado inferior esquerdo, é exibido um gráfico que mostra o número de contribui
+ções ao longo do tempo pela quantidade de pessoas que concordam com aquela
+ informação.
+ Como o registro desse exemplo ainda não possui coordenadas geográficas
+ na 
+\emph on
+triplestore
+\emph default
+, o gráfico exibido não contém essas informações.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/Search_page (1).png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela referente a função de buscas para o protótipo do 
+\shape italic
+Gazetteer.
+ 
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tela_busca"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Caso alguma fazenda selecionada possua informações geográficas, a tela apresenta
+da na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "vali_coordenada"
+
+\end_inset
+
+ é exibida.
+ No canto inferior esquerdo dessa tela, são exibidas as informações referentes
+ às contribuições de usuários ao longo de um determinado período, indicando
+ se eles concordam ou discordam da informação presente no Gazetteer.
+\end_layout
+
+\begin_layout Standard
+Caso a porcentagem de pessoas que concordam seja acima de 70%, os usuários
+ somente podem concordar ou discordar da informação.
+ Se, em algum momento, essa porcentagem estiver abaixo de 70% os usuários
+ podem inserir lugares, que serão armazenados numa lista de candidatos e
+ então um centroide será calculado para essa lista e ele assumirá como nova
+ coordenada geográfica válida.
+\end_layout
+
+\begin_layout Standard
+Para implementar essa funcionalidade, serão atribuídos pesos aos usuários,
+ por exemplo, as sugestões de um voluntário comum recebem peso 1, as de
+ um biólogo do INPA recebem peso 3 e as de um usuário cartógrafo do IBGE
+ recebem peso 5.
+ 
+\end_layout
+
+\begin_layout Standard
+A escolha dos pesos de valor 3 para os biólogos do INPA e 5 para cartógrafos
+ do IBGE, se deve ao fato de que essas informações são mais confiáveis que
+ as informações fornecidas por um usuário comum, assim, para invalidar uma
+ informação inserida por algum biólogo do INPA são necessários mais de 3
+ usuários comuns.
+ Esses números (1, 3 e 5) ainda não estão definidos e podem mudar a partir
+ de experimentos e opiniões de especialistas.
+ Informações inseridas no Gazetteer de fontes autoritativas, como bancos
+ de dados oficiais do IBGE, só podem ser mudadas manualmente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/Agree_Coordinate_high_60% (2).png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela referente a função de validação das coordenadas do 
+\shape italic
+Gazetteer.
+ 
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "vali_coordenada"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A última tela do protótipo, Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "vali_lod"
+
+\end_inset
+
+, tem como objetivo exibir as informações sobre 
+\shape italic
+Linked Open Data
+\shape default
+ .
+ No exemplo apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "vali_lod"
+
+\end_inset
+
+, as informações exibidas, na parte superior a esquerda, representam as
+ informações da localidade e as formas para obter seus dados (RDF, GML,
+ JSON).
+ Já na parte superior à direita, são exibidas as informações referentes
+ a DBpedia, quando alguma informação estiver disponível.
+ Na parte central à esquerda, são mostrados o número de pessoas que contribuíram
+ com aquela informação e a quantidade de pessoas que concordam com essa
+ conexão para essa fonte de 
+\shape italic
+Linked Open Data
+\shape default
+.
+ Por fim, na parte inferior é exibido qual o tipo de geometria de um local.
+\end_layout
+
+\begin_layout Standard
+Essa funcionalidade é importante para representar a qualidade das conexões
+ de 
+\shape italic
+Linked Open Data
+\shape default
+ que estão sendo disponibilizadas pelo 
+\shape italic
+Gazetteer
+\shape default
+, sendo esse um dos desafios listados por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MouraDavi:2013:DeOpPe"
+
+\end_inset
+
+ para a nova geração de 
+\shape italic
+Gazetteers
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/About_place (3).png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela referente a função de validação dos dados de Linked Open Data.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "vali_lod"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Arquitetura proposta para desenvolvimento do trabalho
+\end_layout
+
+\begin_layout Standard
+Ao considerar os trabalhos recentes na área de RIG, que envolvem o desenvolvimen
+to de 
+\shape italic
+Gazetteers
+\shape default
+, grande parte deles desenvolvem seus sistemas utilizando camadas, pois
+ elas fornecem fácil escalabilidade, estabilidade e performance para os
+ sistemas.
+ Geralmente, esses trabalhos dividem a implementação de seus 
+\shape italic
+Gazetteers
+\shape default
+ em três camadas: apresentação (
+\shape italic
+Presentation
+\shape default
+), negócios (
+\shape italic
+Businees
+\shape default
+) e dados (
+\shape italic
+Data
+\shape default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Para implementar as funcionalidades presente nessas camadas, grande parte
+ dos 
+\shape italic
+Gazetteers
+\shape default
+ atuais utilizam tecnologias que não possuem suporte a aplicação de web
+ semântica para abordar os novos desafios da área de RIG e a prática de
+ VIG.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta seção tem como objetivo apresentar a arquitetura proposta para o desenvolvi
+mento deste 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo (que usa VIG e Web Semântica).
+ Até o momento, a implementação deste 
+\shape italic
+Gazetteer
+\shape default
+ é a exibida na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "arq_atual"
+
+\end_inset
+
+.
+ Ela é composta por um mecanismo de aprimoramento de dados que utiliza os
+ dados de acervos biológicos disponibilizados por repositórios como, por
+ exemplo, o SpeciesLink e GBIF.
+ Esse mecanismo permite desambiguar localidades, remover dados de baixa
+ qualidade e aprimorar localidades.
+\end_layout
+
+\begin_layout Standard
+Em conjunto com esse mecanismo, é utilizada uma ontologia que permite mapear
+ os dados para o formato RDF e assim armazená-los numa 
+\emph on
+triplestore
+\emph default
+.
+ Essa 
+\emph on
+triplestore
+\emph default
+, além de armazenar os dados, tem como objetivo disponibilizar um endpoint
+ GeoSPARQL que permite a agentes de software e outros programas realizarem
+ buscas semânticas.
+ No entanto, para dar suporte a prática de VIG é necessário aprimorar a
+ estrutura utilizada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/architecture.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Atual arquitetura do 
+\shape italic
+Gazetteer.
+ 
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "arq_atual"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Verificando essa necessidade e utilizando relatos já listados na literatura
+ por outros trabalhos, a arquitetura do Gazetteer Colaborativo, apresentada
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "arq_VIG"
+
+\end_inset
+
+, é sugerida.
+ Essa arquitetura possui três camadas: apresentação, negócios e dados.
+ Cada uma delas possui uma determinada função para possibilitar o uso de
+ VIG por usuários e a manipulação de dados em formatos utilizados pela Web
+ Semântica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/Arquitetura.png
+	lyxscale 70
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura proposta para o 
+\shape italic
+Gazetteer
+\shape default
+, viabilizando o uso de VGI e padrões de Linked Open Data.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "arq_VIG"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A camada de apresentação contém uma interface Web que possibilita a interação
+ entre usuários por meio de mapas digitais, descritos na seção 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Protótipo"
+
+\end_inset
+
+, e agentes de software por meio de 
+\shape italic
+endpoints
+\shape default
+ GeoSPARQL.
+ Desta forma, é possível a usuários e agentes de software incluir ou buscar
+ informações no 
+\shape italic
+Gazetteer
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Para inserir localidades, informações tais como, tag, localidade, usuário,
+ data e coordenadas geográficas.
+ Essas informações são enviadas a camada de negócios para serem tratadas,
+ validadas e aprimoradas.
+ Isso também acontece quando alguma busca é enviada ao 
+\shape italic
+Gazetteer
+\shape default
+, as informações referentes a 
+\shape italic
+strings
+\shape default
+ de busca são enviadas para o componente de reformulação de consultas na
+ camada de negócios.
+\end_layout
+
+\begin_layout Standard
+A camada de negócios, ao receber tais dados, é responsável por diversas
+ tarefas que são realizadas por seus principais componentes, explicados
+ a seguir: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+labelenumi}{
+\backslash
+roman{enumi}.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Módulo para filtrar informações
+\series default
+: Este módulo é responsável por verificar se as informações inseridas pelo
+ usuário são validas, por exemplo, se a localidade informada se encontra
+ dentro dos limites administrativos do estado do Amazonas.
+ Após realizar a filtragem dos dados, aqueles que são válidos são repassados
+ para o módulo de agrupamento e aprimoramento de registros
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Módulo para agrupar e aprimorar os registros
+\series default
+: Ao se obter os dados já validados, este módulo é responsável por realizar
+ o agrupamento dos dados, verificando se existem outras localidades que
+ podem ser aprimoradas com a informação inserida pelo usuário.
+ Além disso, esse modulo tem a tarefa de resolução de topônimos e leitura
+ de dados de fontes externas, onde os mesmos processos de aprimoramento
+ e agrupamento são realizados com os dados já disponíveis no 
+\emph on
+Gazetteer
+\emph default
+.
+ Após todo esse processo, os dados são enviados para o módulo de mapeamento
+ de dados em RDF.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Módulo para mapear os dados em RDF
+\series default
+: Este módulo tem com objetivo transformar os dados que foram agrupados
+ e aprimorados pelo módulo anterior em dados no formato RDF.
+ Para isso, as informações referentes a ontologia são consultadas e os registros
+ sobre coordenadas geográficas, localidades, data de do registro, entre
+ outros, são estruturados em um formato semântico para assim serem enviados
+ para a camada de dados.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Módulo de reformulação de consultas
+\series default
+: Este módulo tem como função receber as informações referentes as consultas
+ do usuário que foram transmitidas pela camada de apresentação e reformular
+ as mesmas num formato semântico.
+ Para realizar essa tarefa, inicialmente os processos de GeoParser e GeoCoding
+ são realizados para criar o planejamento da 
+\shape italic
+query
+\shape default
+, isto é, verificar se a mesma se refere a uma consulta com apenas nomes
+ de lugares ou se também possui coordenadas geográficas.
+ Após esse processo de planejamento, esse modulo se comunica com a ontologia
+ com objetivo de mapear as informações para uma consulta semântica e então
+ enviar a query para a 
+\emph on
+triplestore
+\emph default
+ na camada de dados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+labelenumi}{
+\backslash
+arabic{enumi}.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A camada de dados, por sua vez, tem como função armazenar os dados do 
+\shape italic
+Gazetteer
+\shape default
+ em uma 
+\shape italic
+triplestore
+\shape default
+.
+ Além disso, é também possível fornecer a camada de negócio dados adicionais
+ referentes a modificações temporais, isto é, informações sobre localidades
+ que tiveram seus nomes ou coordenadas geográficas alteradas ao longo do
+ tempo, como, por exemplo, um município que foi dividido.
+\end_layout
+
+\begin_layout Standard
+Informações geográficas referentes aos locais 
+\begin_inset Quotes eld
+\end_inset
+
+candidatos,
+\begin_inset Quotes erd
+\end_inset
+
+ que forem informados pelos usuários para alterar algum registro no 
+\shape italic
+Gazetteer
+\shape default
+, ou seja, os locais que tiveram uma baixa porcentagem de aceitação descritos
+ na seção 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Protótipo"
+
+\end_inset
+
+, serão armazenadas num outro grafo RDF auxiliar.
+ Desse modo, quando um número suficiente de registros forem inseridos por
+ usuários comuns ou biólogos, uma lista de candidatos será gerada e então
+ armazenada no grafo principal da 
+\shape italic
+triplestore
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+A implementação da arquitetura proposta neste trabalho demanda muito esforço.
+ Diversas implementações poderiam ser realizadas de maneira coletiva e simultane
+amente, e o resultado de tais implementações, ou seja, os módulos, poderiam
+ ser conectados futuramente.
+ Por isso, o presente trabalho irá se limitar a um determinado escopo de
+ forma a tornar factível a verificação de alguns resultados num tempo hábil
+ com o cronograma descrito no capitulo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:conclusao"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Considerações Finais
+\end_layout
+
+\begin_layout Standard
+Neste capitulo, foram descritos os resultados obtidos com o desenvolvimento
+ deste trabalho até o momento.
+ Inicialmente, uma análise dos dados dos repositórios SpeciesLink e GBIF
+ foi realizada, nessa análise foi demonstrado como os dados geográficos
+ sobre biodiversidade são imprecisos.
+ Além disso, foi descrito o método para aprimorar essas coordenadas imprecisas,
+ por meio de um agrupamento de dados e sumarização de coordenadas.
+ Os resultados obtidos por essa técnica se mostraram bem promissores e podem
+ auxiliar na recuperação de registros biológicos.
+ 
+\end_layout
+
+\begin_layout Standard
+Outra contribuição do trabalho, até o momento, é a disponibilização dos
+ dados do 
+\shape italic
+Gazetteer
+\shape default
+ na Web of Data.
+ Isso foi possível graças ao mapeamento de seus dados para formatos utilizados
+ na web semântica, como o RDF, e a disponibilização de serviços SPARQL utilizand
+o uma 
+\shape italic
+triplestore
+\shape default
+.
+ Além disso, foi realizada uma análise das principais 
+\shape italic
+triplestore
+\shape default
+ open source para se trabalhar com funções geográficas, por meio de GeoSPARQL.
+ Foram evidenciados a performance e os principais pontos a serem abordados
+ para o aprimoramento desses sistemas.
+\end_layout
+
+\begin_layout Standard
+Com intuito de aprimorar o 
+\shape italic
+Gazetteer
+\shape default
+ deste trabalho, um mokup de interface web foi proposto para que usuários
+ possam inserir e consultar dados, contribuindo assim para com a prática
+ de VGI.
+ Futuramente, essa interface será avaliada em conjunto com biólogos do INPA
+ e desenvolvida para se integrar ao 
+\shape italic
+Gazetteer
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Por fim, foi descrita uma proposta de arquitetura para o desenvolvimento
+ da versão final deste 
+\shape italic
+Gazetteer,
+\shape default
+ evidenciando os módulos e funcionalidades que devem ser abordadas para
+ utilização de VGI e 
+\shape italic
+Linked Open Data
+\shape default
+.
+ 
+\end_layout
+
+\end_body
+\end_document

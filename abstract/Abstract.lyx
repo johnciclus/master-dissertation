@@ -1,0 +1,149 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+\noindent
+
+\lang brazilian
+Resumo
+\end_layout
+
+\begin_layout Abstract
+
+\lang brazilian
+Os sistemas agrícolas têm a finalidade de produzir os alimentos e subprodutos
+ essenciais para o sustento da humanidade, a natureza complexa destes sistemas
+ exigem enfoques que representem os aspectos relevantes, para assim compreendê-l
+os, analisá-los e fazer inferências que levem à tomada de decisões que contribuí
+am na conservação deles mesmos.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A sustentabilidade aborda este tipo de estudos na identificação das característi
+cas ambientais, ecológicas e econômicas, que permitem representar e atuar
+ nos sistemas agrícolas, neste sentido um processo essencial é a avaliação
+ da sustentabilidade que permite conhecer o estado do sistema com a finalidade
+ de tomar decisões que façam melhoras de sustentabilidade em cada uma das
+ três dimensões.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Para sistematizar o processo de avaliação da sustentabilidade e fornecer
+ uma tecnologia adaptável que represente as mudanças do domínio do conhecimento
+ propôs-se o sistema SustenAgro que representa os conceitos dos especialistas
+ por meio de uma ontologia e implementa a metodologia de avaliação desenvolvida
+ pela unidade de meio ambiente da Embrapa, este software integra tecnologias
+ da web semântica como ontologias, armazenamento em 
+\shape italic
+triplestore
+\shape default
+, consultas semânticas e DSL 
+\emph on
+Domain Specific Language
+\emph default
+, que em conjunto satisfazem varios requisitos de 
+\emph on
+flexibility
+\emph default
+ e 
+\emph on
+usability
+\emph default
+ do software no ambiente da Internet.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os principais aportes do projeto são: a ontologia que representa o conhecimento
+ da avaliação da sustentabilidade no sistema produtivo de cana-de-açúcar
+ no estado de São Paulo, a qual vai suportar as funcionalidades do sistema
+ 
+\emph on
+software
+\emph default
+ e as 
+\emph on
+DSL
+\emph default
+ que têm a finalidade de facilitar a modificação dos conceitos do domínio
+ e da interface gráfica por parte dos especialistas, fornecendo desta maneira
+ a flexibilidade do sistema na adaptação às mudanças.
+\end_layout
+
+\end_body
+\end_document

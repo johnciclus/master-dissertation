@@ -1,0 +1,398 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% specify here the journal
+%\journal{Journal of Web Semantics}
+
+\usepackage[hyphens]{url}
+
+\usepackage{graphicx}
+
+\usepackage{algorithmic}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\usepackage[labelfont={small}]{caption}
+ \def\and{%
+  \end{tabular}% 
+  \hfill%
+  \hspace*{\columnsep}%
+  \hfill%
+  \begin{tabular}[t]{c}}%
+ \def\@maketitle{%
+  \newpage%
+  \null%
+  \vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks%
+    {\LARGE \@title \par}%
+    \vskip 1.5em%
+    {\large%
+      \lineskip .5em%
+      \hfill%
+      \begin{tabular}[t]{c}%
+        \@author%
+      \end{tabular}\hfill\null\par}%
+    \vskip 1em%
+    \vskip 1em%
+    {\large \@date}%
+  \end{center}%
+  \par%
+  \vskip 1.5em}%
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+
+\lang brazilian
+Revisão do estado da arte
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A duplicação da demanda global de alimentos projetadas para os próximos
+ 50 anos, coloca enormes desafios para a produção de alimentos em ecossistemas
+ aquáticos e terrestres, novos incentivos e políticas para garantir a 
+\emph on
+sustainability of agriculture
+\emph default
+ e os 
+\emph on
+ecosystem services
+\emph default
+ serão cruciais para atender as demandas de melhoramento da produtividade
+ sem comprometer a integridade do ambiente ou a saúde publica 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "tilman2002agricultural"
+
+\end_inset
+
+, por esta razão é importante gerar estratégias que permitam conhecer o
+ estado dos sistemas produtivos e melhorar segundo as necessidades identificadas.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na pesquisa de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ewert2009546"
+
+\end_inset
+
+ apresenta varias estrategias para abordar a complexidade nos sistemas agrícolas
+, começa relacionando a agricultura com os ambientes socioeconômicos e naturais,
+ e enfrenta o problema de gerir suas múltiplas funções de uma maneira sustentáve
+l, o 
+\emph on
+Integrated Assessment and Modelling (IAM)
+\emph default
+ pode fornecer uma visão sobre os possíveis impactos das mudanças políticas,
+ existem múltiplos modelos 
+\emph on
+Integrated Assessment (IA)
+\emph default
+ mas a maioria são monolíticos resolvendo problemas específicos, os enfoques
+ flexíveis são escassos, o 
+\emph on
+framework
+\emph default
+ proposto (SEAMLESS-IF) integra relações e processos através de 
+\emph on
+disciplines
+\emph default
+ e 
+\emph on
+scales
+\emph default
+ e combina análises quantitativos com apreciações qualitativas e experiências,
+ permitindo um acoplamento entre modelos e ferramentas, este 
+\emph on
+framework
+\emph default
+ permite um avanço significativo em flexibilidade de IAM o que permite melhorar
+ o modelagem integrado para avaliação do impacto em agricultura.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A pesquisa apresenta exemplos da natureza complexa do sistema agrícola 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "van2008integrated"
+
+\end_inset
+
+ Os sistemas agrícolas evoluem continua-mente e são forçados a cambiar como
+ resultado de uma gama de forças globais e locais.
+ As tecnologias em agricultura e as políticas agrícolas, ambiental e de
+ desenvolvimento estão crescentemente designadas para contribuir à sustentabilid
+ade da agricultura.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Uma estrategia são os métodos e metodologias de avaliação, as quais utilizam
+ indicadores, um exemplo de este enfoque é a pesquisa 
+\backslash
+cite{AlkanOlsson:2009} onde desenvolveram um 
+\backslash
+textit{framework} de indicadores que relaciona de uma maneira consistente
+ as dimensões ambiental, econômica e social do desenvolvimento sustentável,
+ seu principal benefício é uma relativa simplicidade na apresentação da
+ informação e a possibilidade de vincular os indicadores com objetivos políticos
+ de cada dimensão da sustentabilidade e assim facilitar a comparação dos
+ impactos das novas políticas em cada dimensão.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Na pesquisa realizada por 
+\backslash
+cite{Wilson2007299} analisam o melhor abordagem para o desenho e uso de
+ modelos 
+\backslash
+sigla{SDI}{Sustainable Development Indicator}, esta pesquisa direciona um
+ aspecto desta pergunta explorando se as métricas globais SDI estão enviando
+ uma mensagem clara para guiar o desenvolvimento sustentável.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Seis global SDI metrics são comparadas e apresentação combinada dos resultados
+ ilustra que as diferentes métricas variam a interpretação sobre a sustentabilid
+ade das nações, o grau de variabilidade entre as métricas é analisado por
+ meio de análises de correlação, ao final se define que não existe consenso
+ sobre o melhor abordagem.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Existem pesquisas que abordam a sustentabilidade desde ferramentas tecnológicas,
+ as quais podem servir de referencia ao sistema SustenAgro, uma delas foi
+ desenvolvida por 
+\backslash
+cite{brilhante:2006} e consiste em um 
+\backslash
+textit{framework} (MOeMA-IS) para análise sustentável do estado do Amazonas,
+ faz uso de uma ontologia para descrição de Indicadores de sustentabilidade
+ (ISD-Economics Ontology), onde são utilizados indicadores humano (Social),
+ suporte (Econômico) e natural (Ambiental), os quais foram subdivididos
+ em sete indicadores, seu desenvolvimento foi feito de uma maneira genérica
+ de forma que ela suporta a inclusão de novos indicadores de forma simples,
+ esta ontologia foi feita em dois níveis de hierarquia.
+ As medidas de sustentabilidade estão explicitas na ontologia.
+ O 
+\backslash
+textit{framework} trabalha de forma onde a base dele é a ontologia e ele
+ pega os indicadores de bases de dados (não descrito se são 
+\backslash
+textit{triplestores}) e as medidas e valores padrões de outra base e assim
+ o 
+\backslash
+textit{framework} calcula as medidas dos indicadores e dá um resultado relevante
+ ao tipo de necessidade.
+ Para o desenvolvimento da ontologia foi utilizada a ferramenta 
+\backslash
+textit{Protégé} utilizando o plugin de OWL e alguns indicadores foram feitos
+ utilizando a classe do SUMO do OWL.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Outra ferramenta foi desenvolvida por 
+\backslash
+cite{kraines2011system} com a visão de criar um 
+\backslash
+textit{Knowledge Sharing System for Sustainability Science} por meio do
+ processo 
+\backslash
+textit{Semantic Data Modeling}, uma ontologia fundamentada na lógica descritiva
+ foi desenvolvida por meio do ISO 15926 Data Model para descrever três tipos
+ de conceptualizações de ciência sustentável: 
+\backslash
+textit{situational knowledge}, 
+\backslash
+textit{analytic methods} e 
+\backslash
+textit{scenario frameworks}.
+ Os conhecimentos dos especialistas podem ser descritos por meio de 
+\backslash
+textit{semantic statements} utilizando esta ontologia o 
+\backslash
+textit{semantic matching based on logic} e 
+\backslash
+textit{rule-based inferences} foram usados para quantificar o 
+\backslash
+textit{conceptual overlap of semantic statements}.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Alem disso na literatura existem pesquisas relacionadas com o vocabulário
+ 
+\backslash
+sigla{AGROVOC}{Agricultural Vocabulary} 
+\backslash
+footnote{http://aims.fao.org/agrovoc} que é um 
+\backslash
+textit{theasaurus} que fornece termos padronizados sobre alimentação, nutrição,
+ agricultura, pesca, floresta e meio ambiente criados de maneira colaborativa
+ e coordenados pela 
+\backslash
+sigla{FAO}{Food and Agriculture Organization}, estes termos podem ser reutilizad
+os nas ontologias 
+\backslash
+cite{DCMIPro841}, permitindo uma padronização com os identificadores dos
+ conceitos, reusando informações e integrando os conceitos com outros dados
+ da 
+\backslash
+sigla{LOD}{Linked Open Data}, esta reutilização foi feita através da vinculação
+ de AGROVOC ao sistema 
+\backslash
+sigla{AOS/CS}{Agricultural Ontology Service Concept Server}, a FAO desenvolveu
+ um modelo base para esse novo sistema utilizando o 
+\backslash
+sigla{OWL}{Web Ontology Language}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Cada uma destas pesquisas fornece um exemplo do uso das tecnologias da internet
+ e da web semântica na criação de soluções baseadas em conhecimento, isto
+ é confirmado pelo artigo 
+\backslash
+cite{roussey2010ontologies} onde descrevem como as ontologias têm sido usadas
+ para múltiplas tarefas, uma das quais é conseguir interoperabilidade entre
+ sistemas de informação heterogêneos e como as seguintes gerações de sistemas
+ de informação utilizariam uma base do conhecimento do domínio, dadas as
+ afirmações destas pesquisas pode-se deduzir que uma ontologia proporciona
+ o suporte conceitual para cumprir os requisitos do sistema SustenAgro.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A pesquisa feita por 
+\backslash
+cite{boseley2009development}, da um exemplo de como unificar termos de plantas
+ e organizá-los em uma maneira sistemática é fundamental para mais eficiência
+ nas pesquisas e descobertas, para este fim, a 
+\backslash
+textit{Plant Ontology} foi criada como uma iniciativa do 
+\backslash
+textit{Plant Ontology Consortium}, esta ontologia é um vocabulário controlado
+ de termos usados para dados de atributos (por exemplo, genótipo e fenótipo)
+ para uma estrutura especifica da planta ou um estagio de desenvolvimento.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\backslash
+section {Considerações finais}
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A abordagem que vai-se utilizar no desenvolvimento de SustenAgro é a definição
+ de um sistema de avaliação da sustentabilidade baseado em uma ontologia
+ que represente o conhecimento do sistema produtivo de cana-de-açúcar no
+ estado de São Paulo, essa ontologia vai tomar a informação que esta no
+ AGROVOC e dará suporte na indexação, recuperação e organização dos dados,
+ o objetivo da ontologia é suportar o processo de avaliação da sustentabilidade
+ pelo que terá conceitos do domínio do sistema produtivo de cana-de-açúcar
+ e conceitos de sustentabilidade, esta ontologia suportará as funcionalidades
+ do software que fazem possível o processo de avaliação e também será integrada
+ com outra ontologia de interface gráfica para suportar uma DSL que permitirá
+ definir interfaces graficas
+\end_layout
+
+\end_body
+\end_document

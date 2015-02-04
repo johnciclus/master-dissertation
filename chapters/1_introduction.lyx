@@ -1,0 +1,329 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang brazilian
+Os sistemas de produção agrícola são sistemas complexos 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "simon:1991"
+
+\end_inset
+
+ que integram fenômenos de diversa natureza, podem-se identificar dentro
+ dele o subsistema natural que fornece as condições físicas, químicas e
+ biológicas que suportam o desenvolvimento das culturas, também é envolvido
+ o subsistema social quando são integradas organizações e pessoas que influem
+ na produção e comunicação tanto externamente como internamente e finalmente
+ é envolvido o subsistema econômico que estabelece as condiciones de oferta
+ e demanda dos produtos do sistema de produção agrícola, o conjunto destes
+ fenômenos conforma um sistema complexo que requere uma abordagem holística
+ e estratégica para garantir a sustentabilidade do sistema.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Dada a complexidade dos sistemas de produção agrícola, surge a necessidade
+ de avaliar o estado dele para conferir o correto funcionamento ou para
+ tomar decisões que garantam a sustentabilidade, por esta razão são desenvolvida
+s metodologias de avaliação da sustentabilidade que abordam a avaliação
+ em termos de indicadores que medem características criticas do sistema,
+ as quais indicam se existem problemas em cada um dos subsistemas mencionados,
+ que também são chamados dimensões da sustentabilidade, segundo a literatura
+ são divididas nas seguintes três: dimensão ambiental, dimensão econômica
+ e dimensão social 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "AlkanOlsson:2009"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Com a finalidade de fornecer uma ferramenta de avaliação da sustentabilidade
+ que permita o uso massivo e seja adaptável às mudanças do domínio, propõe-se
+ no presente projeto o desenvolvimento de um sistema computacional de avaliação
+ da sustentabilidade para sistemas de produção de cana-de-açúcar no centro-sul
+ do estado de São Paulo - Brasil, este tipo de sistemas também são classificados
+ como sistemas especialistas que contém o conhecimento de um domínio particular,
+ sobre o qual é possível fazer inferências e assim realizar recomendações
+ que apoiem a tomada de decisões.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Para avaliar a sustentabilidade é preciso ter em conta os aspectos críticos
+ em cada dimensão, e assim identificar possíveis fraquezas para tomar medidas
+ corretivas que garantam produções sustentáveis, por isso foram definidos
+ indicadores em cada uma das dimensões da sustentabilidade por parte de
+ uma comunidade de especialistas 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "oliveira:2013"
+
+\end_inset
+
+, esta definição vai-se padronizar em um formato computacionalmente legível
+ por meio de ontologias da web semântica que representam e organizam o conhecime
+nto, conseguindo assim uma representação entendível pelos humanos e computadores
+, além de fornecer suporte com outras tecnologias da web semântica e assim
+ realizar consultas complexas que permitem responder perguntas de interesse
+ para os usuários do sistema.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A ontologia do conhecimento do domínio vai-se integrar com outra ontologia
+ que representará a interface gráfica, as quais vão suportar a definição
+ dos conceitos do domínio e da interface gráfica por parte dos usuários
+ administradores, concedendo flexibilidade ao sistema para incluir cada
+ um dos indicadores, métodos e recomendações que vão-se construindo por
+ parte dos especialistas do domínio.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Nesta pesquisa vão-se desenvolver as tecnologias: ontologia de avaliação
+ da sustentabilidade, ontologia de interface gráfica, DSL para definição
+ de interfaces de usuário, sistema gerador de interfaces e implementação
+ do método de avaliação de sustentabilidade.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O sistema de avaliação da sustentabilidade intitulado SustenAgro e faz parte
+ de um macroprojeto de avaliação de sustentabilidade liderado pela unidade
+ de Meio Ambiente da Embrapa 
+\emph on
+Empresa Brasileira de Pesquisa Agropecuária
+\emph default
+ com a finalidade de definir politicas públicas no setor produtivo da cultura
+ de cana-de-açúcar.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Motivação
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O processo de avaliação da sustentabilidade da cultura de cana-de-açúcar
+ que atualmente é realizado pelos especialistas está em continua construção
+ e depende do contexto produtivo nas três dimensões da sustentabilidade,
+ sendo um processo praticamente particular para cada cultura, devido a estas
+ características decidiu-se computorizar para facilitar a aplicação dele,
+ porém é necessária uma arquitetura que facilite a comunicação entre os
+ especialistas do domínio e os desenvolvedores da ferramenta, neste sentido
+ as ontologias separam o conhecimento do domínio da lógica da computação,
+ e assim permite abordar os desenvolvimentos de uma maneira independente,
+ tanto do software como da representação do conhecimento do domínio, por
+ isso o primeiro produto tecnologico da presente pesquisa vai Ser a ontologia
+ SustenAgro.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O conhecimento de sustentabilidade no sistema de cana-de-açúcar será representad
+o por meio de entidades, relações semânticas e axiomas.
+ Ditos elementos que vão constituir a ontologia que dará ao sistema SustenAgro
+ uma representação formal dos conceitos do domínio, os quais vão ser integrados
+ em cada uma das funcionalidades do sistema permitindo uma personalização
+ e vinculação da informação para suplir os requisitos do usuário.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+A ontologia de SustenAgro também vai suportar uma DSL 
+\emph on
+Domain Specific Language
+\emph default
+ que permitirá definir por parte dos usuários administradores os elementos
+ e o aspecto da interface gráfica do usuário, para assim fornecer flexibilidade
+ na definição da interface grafica.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Finalmente outra característica que será implementada no sistema SustenAgro
+ é a recuperação da informação com conteúdo semântico, permitindo que o
+ sistema de respostas a consultas complexas que integram semântica.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Objetivos
+\end_layout
+
+\begin_layout Subsection*
+
+\lang brazilian
+Objetivo geral
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Desenvolver um sistema web baseado em conhecimento do especialista que permita
+ realizar a avaliação da sustentabilidade no sistema produtivo de cana-de-açúcar
+ no estado de São Paulo e que flexibilize os conceitos e a interface gráfica
+ por parte dos usuários administradores.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\lang brazilian
+Objetivos específicos
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Desenvolver a ontologia de SustenAgro que vai ser a base conceitual e tecnológic
+a de todo o sistema, a qual vai integrar o conhecimento da sustentabilidade
+ e do sistema produtivo de cana-de-açúcar.
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Desenvolver a DSL de SustenAgro que vai flexibilizar a definição da interface
+ de usuário por parte dos administradores do sistema.
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Demostrar que um sistema especialista integrado com as tecnologias da web
+ semântica, permite a realização de consultas complexas que requerem conheciment
+o semântico e que isto facilita o processo de análises da informação por
+ parte dos usuários.
+\end_layout
+
+\begin_layout Itemize
+
+\lang brazilian
+Definir uma arquitetura para sistemas de avaliação baseados em conhecimento
+ de domínios específicos.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Organização
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Esta monografia está organizada da seguinte forma: no capitulo 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "chap:Introduction"
+
+\end_inset
+
+ é apresentada uma visão global do projeto e os objetivos que vão ser desenvolvi
+dos.
+ No capitulo são apresentados os principais conceitos estudados na literatura
+ científica que estão relacionados à área de avaliação da sustentabilidade
+ suportada por sistemas especialistas e web semântica.
+ No capitulo são apresentadas as pesquisas relacionadas com avaliação da
+ sustentabilidade no sistema produtivo de cana-de-açúcar e baseada em web
+ semântica.
+ No capitulo é apresentada uma descrição detalhada da proposta do trabalho,
+ a metodologia, os resultados esperados, e o cronograma para condução das
+ próximas etapas desta pesquisa.
+\end_layout
+
+\end_body
+\end_document
