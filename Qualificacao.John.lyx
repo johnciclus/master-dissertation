@@ -22,7 +22,7 @@ theorems-ams
 eqs-within-sections
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language brazilian
 \language_package babel
 \inputencoding default
 \fontencoding global
@@ -44,6 +44,8 @@ eqs-within-sections
 \paperfontsize default
 \spacing onehalf
 \use_hyperref true
+\pdf_title "SustenAgro, sistema especialista baseado em web semântica paraavaliação da sustentabilidade em sistemas de produção agrícola"
+\pdf_author "Garavito Suárez, John"
 \pdf_subject "Qualificação de Mestrado"
 \pdf_keywords "Web Semântica, gazetteer, biodiversidade"
 \pdf_bookmarks true
@@ -100,24 +102,8 @@ eqs-within-sections
 \begin_layout Standard
 \begin_inset External
 	template PDFPages
-	filename capaicmc/capa.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename capaicmc/rosto.pdf
+	filename capaicmc/book.pdf
+	extra LaTeX "pages={1-4}"
 
 \end_inset
 
@@ -243,14 +229,6 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList algorithm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -314,7 +292,7 @@ name "chap:Introduction"
 
 \end_inset
 
- 
+
 \begin_inset CommandInset include
 LatexCommand input
 filename "chapters/1_introduction.lyx"
@@ -451,32 +429,6 @@ LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "references/refs"
 options "hc-de"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Consultas utilizadas para testar as 
-\shape italic
-triplestore
-\shape default
-s.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Apendice_A"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "appendices/apendice.lyx"
 
 \end_inset
 

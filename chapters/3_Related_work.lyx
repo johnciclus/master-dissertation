@@ -125,7 +125,8 @@ Revisão do estado da arte
 \lang brazilian
 A duplicação da demanda global de alimentos projetadas para os próximos
  50 anos, coloca enormes desafios para a produção de alimentos em ecossistemas
- aquáticos e terrestres, novos incentivos e políticas para garantir a 
+ aquáticos e terrestres, por isso novos incentivos e políticas para garantir
+ a 
 \emph on
 sustainability of agriculture
 \emph default
@@ -136,13 +137,17 @@ ecosystem services
  serão cruciais para atender as demandas de melhoramento da produtividade
  sem comprometer a integridade do ambiente ou a saúde publica 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "tilman2002agricultural"
 
 \end_inset
 
 , por esta razão é importante gerar estratégias que permitam conhecer o
  estado dos sistemas produtivos e melhorar segundo as necessidades identificadas.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -150,7 +155,7 @@ key "tilman2002agricultural"
 \lang brazilian
 Na pesquisa de 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Ewert2009546"
 
 \end_inset
@@ -187,6 +192,10 @@ framework
 \emph default
  permite um avanço significativo em flexibilidade de IAM o que permite melhorar
  o modelagem integrado para avaliação do impacto em agricultura.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -194,7 +203,7 @@ framework
 \lang brazilian
 A pesquisa apresenta exemplos da natureza complexa do sistema agrícola 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "van2008integrated"
 
 \end_inset
@@ -204,6 +213,10 @@ key "van2008integrated"
  As tecnologias em agricultura e as políticas agrícolas, ambiental e de
  desenvolvimento estão crescentemente designadas para contribuir à sustentabilid
 ade da agricultura.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -212,7 +225,7 @@ ade da agricultura.
 Uma estrategia são os métodos e metodologias de avaliação, as quais utilizam
  indicadores, um exemplo de este enfoque é a pesquisa 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "AlkanOlsson:2009"
 
 \end_inset
@@ -227,6 +240,10 @@ framework
  de vincular os indicadores com objetivos políticos de cada dimensão da
  sustentabilidade e assim facilitar a comparação dos impactos das novas
  políticas em cada dimensão.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -234,7 +251,7 @@ framework
 \lang brazilian
 Na pesquisa realizada por 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Wilson2007299"
 
 \end_inset
@@ -247,6 +264,10 @@ SDI Sustainable Development Indicator
  globais SDI estão enviando uma mensagem clara para guiar o desenvolvimento
  sustentável.
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -257,6 +278,10 @@ Seis global SDI metrics são comparadas e apresentação combinada dos resultado
 ade das nações, o grau de variabilidade entre as métricas é analisado por
  meio de análises de correlação, ao final se define que não existe consenso
  sobre o melhor abordagem.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -266,7 +291,7 @@ Existem pesquisas que abordam a sustentabilidade desde ferramentas tecnológicas
  as quais podem servir de referencia ao sistema SustenAgro, uma delas foi
  desenvolvida por 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "brilhante:2006"
 
 \end_inset
@@ -304,6 +329,10 @@ Protégé
 \emph default
  utilizando o plugin de OWL e alguns indicadores foram feitos utilizando
  a classe do SUMO do OWL.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -311,7 +340,7 @@ Protégé
 \lang brazilian
 Outra ferramenta foi desenvolvida por 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "kraines2011system"
 
 \end_inset
@@ -356,6 +385,10 @@ rule-based inferences
 conceptual overlap of semantic statements
 \emph default
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -367,8 +400,18 @@ Alem disso na literatura existem pesquisas relacionadas com o vocabulário
 AGROVOC Agricultural Vocabulary
 \emph default
  
-\backslash
-footnote{http://aims.fao.org/agrovoc} que é um 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\lang brazilian
+http://aims.fao.org/agrovoc
+\end_layout
+
+\end_inset
+
+ que é um 
 \emph on
 theasaurus
 \emph default
@@ -380,7 +423,7 @@ FAO Food and Agriculture Organization
 \emph default
 , estes termos podem ser reutilizados nas ontologias 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "DCMIPro841"
 
 \end_inset
@@ -395,6 +438,10 @@ AOS/CS Agricultural Ontology Service Concept Server
 , a FAO desenvolveu um modelo base para esse novo sistema utilizando o 
 \emph on
 OWL Web Ontology Language.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -404,7 +451,7 @@ Cada uma destas pesquisas fornece um exemplo do uso das tecnologias da internet
  e da web semântica na criação de soluções baseadas em conhecimento, isto
  é confirmado pelo artigo 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "roussey2010ontologies"
 
 \end_inset
@@ -415,6 +462,10 @@ key "roussey2010ontologies"
  uma base do conhecimento do domínio, dadas as afirmações destas pesquisas
  pode-se deduzir que uma ontologia proporciona o suporte conceitual para
  cumprir os requisitos do sistema SustenAgro.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -422,7 +473,7 @@ key "roussey2010ontologies"
 \lang brazilian
 A pesquisa feita por 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "boseley2009development"
 
 \end_inset
@@ -440,6 +491,10 @@ Plant Ontology Consortium
 , esta ontologia é um vocabulário controlado de termos usados para dados
  de atributos (por exemplo, genótipo e fenótipo) para uma estrutura especifica
  da planta ou um estagio de desenvolvimento.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

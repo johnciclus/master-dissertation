@@ -70,22 +70,63 @@
 
 \begin_body
 
-\begin_layout Section*
-\noindent
+\begin_layout Chapter*
 
+\noun on
 \lang brazilian
 Resumo
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+GARAVITO, S.
+ 
+\series bold
+SustenAgro: sistema especialista baseado em web semântica para avaliação
+ da sustentabilidade em sistemas de produção agrícola
+\series default
+.
+ 2015.
+ 42 f.
+ Qualificação (Mestrado em Ciências – Ciências de Computação e Matemática
+ Computacional) – Instituto de Ciências Matemáticas e de Computação (ICMC/USP),
+ São Carlos – SP.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Abstract
 
 \lang brazilian
-Os sistemas agrícolas têm a finalidade de produzir os alimentos e subprodutos
- essenciais para o sustento da humanidade, a natureza complexa destes sistemas
- exigem enfoques que representem os aspectos relevantes, para assim compreendê-l
-os, analisá-los e fazer inferências que levem à tomada de decisões que contribuí
-am na conservação deles mesmos.
- 
+Os sistemas de produção agrícola têm a finalidade de produzir os alimentos
+ e subprodutos essenciais para o sustento da humanidade, a natureza complexa
+ destes sistemas evidenciada nos factores ambientais, sociais e econômicos
+ que são envolvidos dificulta a compreensão e conservação a longo prazo
+ deles, para diminuir esta incerteza é necessário ter uma base conceitual
+ dos aspectos críticos para tomar decisões que garantam sustentabilidade
+ em cada dimensão do sistema.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+
+\lang brazilian
+O problema que é abordado na presente pesquisa é como representar computacionalm
+ente o processo de avaliação da sustentabilidade do sistema produtivo de
+ cana-de-açúcar no estado de São Paulo, fornecendo um sistema flexível e
+ usável, uma primeira abordagem consiste em modelar os aspectos relevantes
+ segundo o consenso sobre sustentabilidade, em um formato de fácil edição
+ que dê suporte no armazenamento e na recuperação de informação.
 \begin_inset Newline newline
 \end_inset
 
@@ -95,12 +136,14 @@ am na conservação deles mesmos.
 \begin_layout Standard
 
 \lang brazilian
-A sustentabilidade aborda este tipo de estudos na identificação das característi
-cas ambientais, ecológicas e econômicas, que permitem representar e atuar
- nos sistemas agrícolas, neste sentido um processo essencial é a avaliação
- da sustentabilidade que permite conhecer o estado do sistema com a finalidade
- de tomar decisões que façam melhoras de sustentabilidade em cada uma das
- três dimensões.
+A teoria sobre sustentabilidade em agricultura aborda este tipo de estudos
+ na identificação das características ambientais, sociais e económicas,
+ um problema é que a diversidades de enfoques e definições têm dificultado
+ a selecção de conceitos padronizados, por isso esta pesquisa baseou-se
+ em um conjunto de conceitos proposto e validados por especialistas na área,
+ com a finalidade de suportar computacionalmente o processo de avaliação
+ da sustentabilidade para conhecer o estado do sistema com a finalidade
+ de tomar decisões que façam melhoras em cada uma das três dimensões.
 \begin_inset Newline newline
 \end_inset
 
@@ -113,25 +156,34 @@ cas ambientais, ecológicas e econômicas, que permitem representar e atuar
 Para sistematizar o processo de avaliação da sustentabilidade e fornecer
  uma tecnologia adaptável que represente as mudanças do domínio do conhecimento
  propôs-se o sistema SustenAgro que representa os conceitos dos especialistas
- por meio de uma ontologia e implementa a metodologia de avaliação desenvolvida
- pela unidade de meio ambiente da Embrapa, este software integra tecnologias
- da web semântica como ontologias, armazenamento em 
+ por meio de uma ontologia e implementa a metodologia de avaliação da sustentabi
+lidade desenvolvida pela unidade de Meio Ambiente da Embrapa, este software
+ integra tecnologias da web semântica como ontologias, armazenamento em
+ 
 \shape italic
 triplestore
 \shape default
-, consultas semânticas e DSL 
+, consultas semânticas e as 
 \emph on
-Domain Specific Language
+DSL 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DSL"
+description "Domain Specific Language"
+
+\end_inset
+
+
 \emph default
 , que em conjunto satisfazem varios requisitos de 
 \emph on
-flexibility
+Flexibility
 \emph default
  e 
 \emph on
-usability
+Usability
 \emph default
- do software no ambiente da Internet.
+ do Sistema Web.
 \begin_inset Newline newline
 \end_inset
 
@@ -141,10 +193,8 @@ usability
 \begin_layout Standard
 
 \lang brazilian
-Os principais aportes do projeto são: a ontologia que representa o conhecimento
- da avaliação da sustentabilidade no sistema produtivo de cana-de-açúcar
- no estado de São Paulo, a qual vai suportar as funcionalidades do sistema
- 
+Os principais aportes do projeto são: as ontologias que representam do domínio,
+ as quais vão suportar as funcionalidades do sistema 
 \emph on
 software
 \emph default
@@ -155,6 +205,20 @@ DSL
  que têm a finalidade de facilitar a modificação dos conceitos do domínio
  e da interface gráfica por parte dos especialistas, fornecendo desta maneira
  a flexibilidade do sistema na adaptação às mudanças.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Palabras chave:
+\series default
+ Sistema web, Sistema especialista, Apoio na tomada de decisão, Metodologia
+ de avaliação da sustentabilidade, Sistema agrícola, Sistema produtivo de
+ cana-de-açúcar.
 \end_layout
 
 \end_body

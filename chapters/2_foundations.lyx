@@ -103,14 +103,14 @@ O desenvolvimento sustentável prevê o atendimento das necessidades do presente
 \begin_inset Quotes erd
 \end_inset
 
- 
+ (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Burton:1987"
 
 \end_inset
 
-
+)
 \begin_inset Newline newline
 \end_inset
 
@@ -122,14 +122,14 @@ key "Burton:1987"
 \lang brazilian
 Após o relatório Brundtland a ênfase do conceito desloca-se da integridade
  ambiental para o elemento humano, gerando um equilíbrio entre as dimensões
- econômica, social e ambiental 
+ econômica, social e ambiental (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "van2005indicadores"
 
 \end_inset
 
-
+)
 \end_layout
 
 \begin_layout Subsection
@@ -207,6 +207,9 @@ Atributos norteadores
 Os atributos norteadores são variáveis que serão mais representativas dos
  sistemas de produção agrícola em termos dos compartimentos ambiental e
  socioeconômico formulados para alcance da sustentabilidade.
+\begin_inset Newline newline
+\end_inset
+
  
 \end_layout
 
@@ -222,7 +225,7 @@ Os atributos norteadores serão formulados para garantir que as diretrizes
 \begin_layout Itemize
 
 \lang brazilian
-Dimensão Ambiental: Solo, Hídrico e Clima.
+Dimensão Ambiental: Solo, Hídrico e Clima
 \end_layout
 
 \begin_layout Itemize
@@ -327,24 +330,22 @@ Os indicadores devem ser capazes, não apenas de sinalizar a existência de
 
 \lang brazilian
 O limite inferior do nível crítico é aquele no qual a velocidade de degradação
- é alta, mas ainda pode ser revertida.
+ é alta, mas ainda pode ser revertida
 \end_layout
 
 \begin_layout Itemize
 
 \lang brazilian
 O limite superior do nível crítico se refere ao ponto de irreversibilidade
- de degradação do recurso.
+ de degradação do recurso
 \end_layout
 
 \begin_layout Standard
 
 \lang brazilian
 A finalidade de um indicador de sustentabilidade é refletir as alterações
- nas propriedades fundamentais de um sistema (Camino 
-\backslash
-& Müller, 1993) e advertir sobre eventuais perturbações potenciais (Ferraz,
- 2003).
+ nas propriedades fundamentais de um sistema (Camino & Müller, 1993) e advertir
+ sobre eventuais perturbações potenciais (Ferraz, 2003).
 \begin_inset Newline newline
 \end_inset
 
@@ -509,8 +510,8 @@ Distância de mais de 20 km: Menos sustentável (-1)
 
 \lang brazilian
 Revela o estado de um sistema ou fenômeno, é uma síntese das características
- ou variáveis analisadas, analisa dados através da junção de um jogo de
- elementos com relacionamentos estabelecidos, este será o meio de agregação
+ ou variáveis analisadas, representa dados através da junção de um jogo
+ de elementos com relacionamentos estabelecidos, este será o meio de agregação
  dos indicadores, para formular o índice de sustentabilidade parcial, por
  exemplo por dimensão ou geral
 \end_layout
@@ -531,13 +532,14 @@ A web tem sido criada para possibilitar o acesso, intercâmbio e recuperação
  Até o momento, não existe nenhuma estratégia abrangente e satisfatória
  para a indexação de documentos por meio de “motores de busca” que seja
  coerente com uma estrutura linguística.
+ (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Souza:2004"
 
 \end_inset
 
-
+)
 \begin_inset Newline newline
 \end_inset
 
@@ -550,14 +552,15 @@ key "Souza:2004"
 A busca realizada pelos sistemas de recuperação de informação utiliza-se
  de palavras-chave onde apenas a similaridade e o número de ocorrências
  de certas palavras, no conteúdo de documentos, são levados em consideração
- e não a semântica presente naquela informação
+ e não a semântica presente naquela informação.
+ (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Souza:2004"
 
 \end_inset
 
-
+)
 \begin_inset Newline newline
 \end_inset
 
@@ -571,14 +574,15 @@ Então, com o intuito de preencher esse gargalo semântico na busca por informa�
 s, surge a web semântica.
  Ela tem como objetivo incorporar significado às informações presentes na
  web, criando um ambiente onde agentes de software e usuários possam trabalhar
- de forma cooperativa e entender o significado (sentido) presente nos dados
+ de forma cooperativa e entender o significado (sentido) presente nos dados.
+ (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Brandao:2002"
 
 \end_inset
 
-
+)
 \begin_inset Newline newline
 \end_inset
 
@@ -612,23 +616,23 @@ nto de qualquer domínio por meio de entidades, classificações, relações
 
 \lang brazilian
 Além do anterior, não existe um consenso sobre sua exata definição, segundo
- 
+ (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gruber:1995"
 
 \end_inset
 
- uma ontologia é uma especificação formal e explícita de conceitos que compartil
-ham o mesmo domínio de informação.
- Ainda nesse contexto 
+) uma ontologia é uma especificação formal e explícita de conceitos que
+ compartilham o mesmo domínio de informação.
+ Ainda nesse contexto (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "noy:2001"
 
 \end_inset
 
- relatam que as ontologias surgiram para compartilhar, organizar e especificar
+) relatam que as ontologias surgiram para compartilhar, organizar e especificar
  conhecimentos de um determinado domínio.
  
 \begin_inset Newline newline
@@ -716,15 +720,15 @@ Considerações finais
 \lang brazilian
 Neste capitulo foram apresentados os principais conceitos da avaliação da
  sustentabilidade segundo o levantamento de indicadores que foi realizado
- com antecedência nas etapas iniciais do projeto Sustenagro 
+ com antecedência nas etapas iniciais do projeto Sustenagro (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "oliveira:2013"
 
 \end_inset
 
-, além disso também foi apresentado os conceitos da web semântica e dos
- sistemas especialistas, gerando assim uma base conceitual que suportará
+), além disso também foram apresentados os conceitos da web semântica e
+ dos sistemas especialistas, gerando assim uma base conceitual que suportará
  a sistematização do processo de avaliação da sustentabilidade em sistemas
  produtivos de cana-de-açúcar.
  
